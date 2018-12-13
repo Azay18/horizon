@@ -41,7 +41,7 @@
               <a class="dropdown-item" href="<?= base_url()."index.php/controller/desa";?>">Data Induk Desa</a>
               <a class="dropdown-item" href="<?= base_url()."index.php/controller/laporan";?>">Data Laporan</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a class="dropdown-item" href="<?= base_url()."index.php/controller/logout";?>">Logout</a>
             </div>
           </li>
           <img src="<?= base_url()?>assets/img/p1.png" class="foto mt-1" alt="..." class="rounded-circle">

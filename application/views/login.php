@@ -9,6 +9,7 @@
             </div>
             </div>
 
+        <form class="form-signin" action="<?php echo base_url().'index.php/controller/login'?>" method="post">
             <div class="row text-center justify-content-center">
                 <div class="col-md-4 col-sm-8 col-xs-12 col-md-offset-4 col-sm-offset-2 login-image-main text-center">
                     <div class="row">
@@ -17,19 +18,21 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 user-login-box">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="User Name" id="usr">
+                                <input type="text" class="form-control" placeholder="Email" id="usr" name="email">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Password" id="usr">
+                                <input type="text" class="form-control" placeholder="Password" id="usr" name="password">
                             </div>
-                            <a href="#" class="btn btn-success">Login</a>
+                            <button class="btn btn-success" type="submit">Login</button>
+                            <!-- <a href="#" class="btn btn-success">Login</a> -->
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 last-part">
-                            <p>Belum Terdaftar?<a href="<?= base_url()."index.php/controller/register";?>"> Buat Akun</a></p>
+                            <p>Belum Terdaftar?<a href="<?= base_url()."index.php/controller/loadRegister";?>"> Buat Akun</a></p>
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </section>
     

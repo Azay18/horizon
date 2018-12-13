@@ -1,23 +1,107 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Controller extends CI_Controller {
+class controller extends CI_Controller {
+	function __construct() {
+		parent::__construct();
+		$this->load->library(array('form_validation'));
+		$this->load->helper(array('form', 'url'));
+		$this->load->model('M_model');			
+	}
+	
 	public function index()
 	{
 		// $data = $this->sdm_model->GetPegawai();
 		$this->load->view('home'/*,array('data' => $data)*/);
 	}
 
-	public function login(){$this->load->view('login');}
+	// Fungsi controller login
+	public function login() {
+		$this->load->view('login');
+		$email=htmlspecialchars($this->input->post('email',TRUE),ENT_QUOTES);
+        $password=htmlspecialchars($this->input->post('password',TRUE),ENT_QUOTES);
 
+        $cek_bpbd=$this->M_model->masuk($email,$password);
+
+        if($cek_bpbd->num_rows() > 0){ //jika login sebagai dosen
+            $data=$cek_bpbd->row_array();
+            $this->session->set_userdata('masuk',TRUE);
+             if($data['peran']=='bnpb'){ //Akses admin
+                $this->session->set_userdata('peran','bnpb');
+                $this->session->set_userdata('ses_email',$data['email']);
+                $this->session->set_userdata('ses_nama',$data['nama']);
+                $this->load->view('bnpb');
+                // redirect('v_dashboard');
+             }else if ($data['peran']=='fasilitator') { //akses dosen
+                $this->session->set_userdata('peran','fasilitator');
+                $this->session->set_userdata('ses_email',$data['email']);
+                $this->session->set_userdata('ses_nama',$data['nama']);
+                $this->load->view('fasilitator');
+                // redirect('v_dashboard2');
+             } else {
+                $this->load->view('home');
+             }
+        }
+	}
+
+	// Fungsi controller logout
+	function logout() {
+        $this->session->sess_destroy();
+		$this->load->view('home');
+		// $url=base_url('');
+        // redirect($url);
+	}
+	
 	public function kategori(){$this->load->view('kategori');}
 
 	public function berita(){$this->load->view('berita');}
 
 	public function forum(){$this->load->view('forum');}
 
-	public function register(){$this->load->view('register');}
+	public function loadRegister() {
+		$this->load->view('register');
+	}
+	
+	// Fungsi controller register
+	public function register() { 
+		// $this->load->view('register');
+		$this->form_validation->set_rules('nama', 'NAMA','required');
+        $this->form_validation->set_rules('jenis_kelamin', 'JENIS_KELAMIN','required');
+        $this->form_validation->set_rules('usia', 'usia','required');
+        $this->form_validation->set_rules('email','EMAIL','required|valid_email');
+     	$this->form_validation->set_rules('nomor_hp','NOMOR_HP','required');
+        $this->form_validation->set_rules('password','PASSWORD','required');
+        $this->form_validation->set_rules('alasan','ALASAN','required');
+		$this->form_validation->set_rules('jenjang_pendidikan','JENJANG_PENDIDIKAN','required');
+		$this->form_validation->set_rules('kode_pos','KODE_POS','required');
+		$this->form_validation->set_rules('alamat','ALAMAT','required');
 
+		if($this->form_validation->run() == FALSE) {
+			echo " <script> 
+			alert('Terdapat kesalahan')
+			</script>";
+			$this->load->view('register');
+		} else {
+			$data['nama']   =    $this->input->post('nama');
+            $data['jenis_kelamin'] =    $this->input->post('jenis_kelamin');
+            $data['usia'] =    $this->input->post('usia');
+            $data['email']  =    $this->input->post('email');
+            $data['nomor_hp'] =    $this->input->post('nomor_hp');
+            $data['password'] =    md5($this->input->post('password'));
+			$data['alasan'] =      $this->input->post('alasan');
+			$data['jenjang_pendidikan'] =      $this->input->post('jenjang_pendidikan');
+			$data['kode_pos'] =      $this->input->post('kode_pos');
+			$data['alamat'] =      $this->input->post('alamat');
+ 
+			$this->M_model->daftar($data);
+
+			echo "<script> 
+			alert('Selamat akun Anda berhasil didaftarkan, silahkan tunggu proses aktifasi agar akun Anda dapat digunakan')
+			</script>";
+			$this->load->view('login');
+		}
+	}
+	
 	public function fasilitator(){$this->load->view('fasilitator');}
 
 	public function bnpb(){$this->load->view('bnpb');}
