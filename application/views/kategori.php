@@ -1,0 +1,88 @@
+<title>Kategori</title>
+<?php require 'header.php'; ?>
+
+    <div class="container mt-4 text-center" style="padding-top:50px">
+      <h4>KATEGORI DESA</h4><hr/>
+      <div class="row mt-1">
+        <div class="col-lg-5">
+          <form action="" method="post">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="cari desa.." name="keyword" autocomplete="off">
+              <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="submit" id="tombolCari">Cari</button>
+              </div>
+            </div>
+          </form>
+        </div> 
+      </div>
+      <div id="info"></div>
+      <div class="table-responsive">                                 
+        <table id="user_data" class="table table-bordered table-striped">  
+          <thead>  
+              <tr>
+                <th>ID</th>  
+                <th>Nama Desa</th> 
+                <th>Kecamatan</th>
+                <th>Kabupaten</th>                                                                 
+                <th>Provinsi</th>
+                <th>Kategori</th>
+              </tr>
+          </thead>  
+              <tr>
+                <td>1</td>
+                <td>Nglanjaran</td>
+                <td>Ngaglik</td>
+                <td>Sleman</td>
+                <td>Yogyakarta</td>
+                <td>Utama</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Manis Kidul</td>
+                <td>Jalaksana</td>
+                <td>Kuningan</td>
+                <td>Jawa Barat</td>
+                <td>Madya</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Wiradesa</td>
+                <td>Tirto</td>
+                <td>Pekalongan</td>
+                <td>Jawa Tengah</td>
+                <td>Utama</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Manis Lor</td>
+                <td>Jalaksana</td>
+                <td>Kuningan</td>
+                <td>Jawa Barat</td>
+                <td>Pratama</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Kajen</td>
+                <td>Tirto</td>
+                <td>Pekalongan</td>
+                <td>Jawa Tengah</td>
+                <td>Madya</td>
+              </tr>
+          </table>  
+        </div>  
+
+          <nav aria-label="Page navigation example">
+            <ul class="pagination col-auto">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+          
+    </div>   
+
+    
+
+<?php require 'footer.php'; ?>

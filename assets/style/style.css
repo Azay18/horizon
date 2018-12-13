@@ -1,0 +1,67 @@
+/* Navbar */
+.navbar {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar-brand {
+  font-family: Viga;
+  font-size: 32px;
+} */
+
+/* Utility */
+.tombol {
+  text-transform: uppercase;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffee3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 30px;
+} */
+a:hover {
+  animation: animate 8s linear infinite;
+}
+@@keyframes animate {
+  0%
+  {
+    background-position: 0%;
+  }
+  100%
+  {
+    background-position: 400%;
+  }
+} */
+
+.img {
+  height: 64px;
+  weight: 64px;
+}
+
+/* Desktop Version */
+@media (min-width: 992px) {
+  .navbar-brand, .nav-link {
+    color: white !important;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+  }
+
+  .nav-link {
+    text-transform: uppercase;
+    margin-right: 30px;
+  }
+
+  .nav-link:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid #0B63DC;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+  }
+
+  .workingspace {
+    text-align: left;
+  }
+} 

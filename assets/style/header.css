@@ -1,0 +1,79 @@
+/* Navbar */
+.navbar {
+    z-index: 1;
+  }
+
+.navbar-brand, .nav-link {
+        color: rgb(253, 253, 253) !important;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.info-panel {
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    margin-top: -110px;
+    background-color:white;
+    padding: 30px;
+  }
+
+.jumbotron-fluid{
+    height: 500px;
+    color: white;
+}
+
+.home{
+    background-image: linear-gradient(#063b0b, #227c31);
+}
+
+.fasilitator{
+    background-image: linear-gradient(#06173b, #224c7c);
+}
+
+.bnpb{
+    background-image: linear-gradient(#6d0707, #c41c1c);
+}
+
+html, body, #map-canvas {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+.gambar{
+    height: 300px;
+    width;
+    background-image: url(../img/2.jpg);
+}
+
+.foto{
+    height: 30px;
+    width: 30px;
+}
+
+.footer{
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+    bottom: 0%;
+}
+
+/* Desktop Version */
+@media (min-width: 992px) {
+.foto{
+    display: block;
+    height: 30px;
+}
+
+
+/* .nav-link:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    width: 50%;
+    margin: auto;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+  } */
+}
