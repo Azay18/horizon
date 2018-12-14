@@ -7,7 +7,12 @@
     <div class="form-row mt-3">
         <div class="col">
         <label for="namaDesa">Nama Desa</label>
-        <input type="text" class="form-control" placeholder="Nama Desa">
+        <!-- <input type="text" class="form-control" placeholder="Nama Desa"> -->
+        <select id="inputState" name="departemen" class="form-control"> 
+        <?php foreach ($des as $d): ?>
+              <option value="<?php echo $d['nama_destana'];?>"></option>
+        <?php endforeach; ?>
+        </select>
         </div>
     </div>
     <div class="form-group mt-3">
