@@ -23,20 +23,18 @@ class controller extends CI_Controller {
 
         $cek_bpbd=$this->M_model->masuk($email,$password);
 
-        if($cek_bpbd->num_rows() > 0){ //jika login sebagai dosen
+        if($cek_bpbd->num_rows() > 0){ 
             $data=$cek_bpbd->row_array();
             $this->session->set_userdata('masuk',TRUE);
-             if($data['peran']=='bnpb'){ //Akses admin
+             if($data['peran']=='bnpb'){ 
                 $this->session->set_userdata('peran','bnpb');
                 $this->session->set_userdata('ses_email',$data['email']);
                 $this->session->set_userdata('ses_nama',$data['nama']);
-                // $this->load->view('bnpb');
                 redirect('controller/bnpb');
-             }else if ($data['peran']=='fasilitator') { //akses dosen
+             }else if ($data['peran']=='fasilitator') { 
                 $this->session->set_userdata('peran','fasilitator');
                 $this->session->set_userdata('ses_email',$data['email']);
                 $this->session->set_userdata('ses_nama',$data['nama']);
-                // $this->load->view('fasilitator');
                 redirect('controller/fasilitator');
              } else {
                 $this->load->view('home');
@@ -48,29 +46,44 @@ class controller extends CI_Controller {
 	function logout() {
         $this->session->sess_destroy();
 		$this->load->view('home');
-		// $url=base_url('');
-        // redirect($url);
 	}
 
 	// Fungsi controller tambah data destana
 	function tambah_dataDesa() {
-		
 		$data['nama_destana'] = $this->input->post('nama_destana');
 		$data['alamat']   =    $this->input->post('alamat');
         $data['kecamatan'] =    $this->input->post('kecamatan');
         $data['kabupaten'] =    $this->input->post('kabupaten');
         $data['provinsi']  =    $this->input->post('provinsi');
         $data['jumlah_penduduk'] =    $this->input->post('jumlah_penduduk');
-        $data['kode_pos'] =    md5($this->input->post('kode_pos'));
+        $data['kode_pos'] =    ($this->input->post('kode_pos'));
  
-		$this->M_model->tambah_data_destana($data);
+		$this->M_model->tambah_dataDestana($data);
+	
+		redirect('controller/fasilitator');
+	}
 
-		echo "<script> 
-		alert('Selamat akun Anda berhasil didaftarkan, silahkan tunggu proses aktifasi agar akun Anda dapat digunakan')
-		</script>";
-		// redirect
+	// Tampilkan data nama destana di view form tambah destana (select choice)
+	public function tambah_dataDesaTangguh() {
+		$dep = $this->M_model->get_data_destana();
+		$this->load->view('tambahdesa',array('dep' => $dep));
 	}
 	
+	// Fungsi controller identitas laporan
+	function identitas_laporan() {
+		$data['nama_fasilitator'] = $this->input->post('nama_fasilitator');
+		$data['nama_desa']   =    $this->input->post('nama_desa');
+        $data['kecamatan'] =    $this->input->post('kecamatan');
+        $data['kabupaten'] =    $this->input->post('kabupaten');
+        $data['provinsi']  =    $this->input->post('provinsi');
+        $data['jumlah_ya'] =    $this->input->post('jumlah_ya');
+        $data['jumlah_tidak'] =    ($this->input->post('jumlah_tidak'));
+ 
+		$this->M_model->tambah_dataLaporan($data);
+	
+		redirect('controller/indikator');
+	}
+
 	public function kategori(){$this->load->view('kategori');}
 
 	public function berita(){$this->load->view('berita');}
