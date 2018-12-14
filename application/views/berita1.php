@@ -3,12 +3,13 @@
 
 <div class="container">
 
-    <div class="gambar">
+    <div class="">
         <div class="container mt-5">
+        <img class="berita" src="<?= base_url()?>assets/img/2.jpg" alt="">
         </div>
     </div>
 
-    <div class="container artikel mt-3">
+    <div class="container artikel mt-2">
     <h1 class="display-4">Pemkab Tukar Tanah Kas Desa Gaum</h1>
         <p>
     KARANGANYAR, suaramerdeka.com – Pemkab Karanganyar membeli tanah petani sebagai pengganti tanah kas Desa Gaum, Kecamatan Tasikmadu yang digunakan untuk pengembangan Taman Wisata Dirgantara (Edupark), akhirnya final.
@@ -23,4 +24,5 @@
     </p><p>
     Setelah itu, Pemprov Jateng akan menerjunkan tim untuk mengecek. Setelah itu, turun persetujuan dari Gubernur pada 23 Agustus lalu. Biaya proses pelepasan tanah ditanggung Pemkab dan pekan ini seluruh proses bisa selesai dan uang pembayaran akan ditransfer ke rekening masing-masing.</p>
     </div>
+    <br>
 </div>
