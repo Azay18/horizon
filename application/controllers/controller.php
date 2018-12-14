@@ -30,14 +30,14 @@ class controller extends CI_Controller {
                 $this->session->set_userdata('peran','bnpb');
                 $this->session->set_userdata('ses_email',$data['email']);
                 $this->session->set_userdata('ses_nama',$data['nama']);
-                $this->load->view('bnpb');
-                // redirect('v_dashboard');
+                // $this->load->view('bnpb');
+                redirect('controller/bnpb');
              }else if ($data['peran']=='fasilitator') { //akses dosen
                 $this->session->set_userdata('peran','fasilitator');
                 $this->session->set_userdata('ses_email',$data['email']);
                 $this->session->set_userdata('ses_nama',$data['nama']);
-                $this->load->view('fasilitator');
-                // redirect('v_dashboard2');
+                // $this->load->view('fasilitator');
+                redirect('controller/fasilitator');
              } else {
                 $this->load->view('home');
              }

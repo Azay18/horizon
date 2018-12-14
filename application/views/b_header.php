@@ -42,7 +42,7 @@
                 <a class="dropdown-item" href="<?= base_url()."index.php/controller/calonfasilitator";?>">Calon Fasilitator</a>
                 <a class="dropdown-item" href="<?= base_url()."index.php/controller/lihatlaporan";?>">Lihat Laporan</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" href="<?= base_url()."index.php/controller/logout";?>">Logout</a>
             </div>
           </li>
           <img src="<?= base_url()?>assets/img/p2.png" class="foto mt-1" height="30px" class="mt-1" alt="">
