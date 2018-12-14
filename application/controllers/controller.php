@@ -51,6 +51,23 @@ class controller extends CI_Controller {
 		// $url=base_url('');
         // redirect($url);
 	}
+
+	// Fungsi controller tambah data destana
+	function tambah_dataDesa() {
+		$data['alamat']   =    $this->input->post('alamat');
+        $data['kecamatan'] =    $this->input->post('kecamatan');
+        $data['kabupaten'] =    $this->input->post('kabupaten');
+        $data['provinsi']  =    $this->input->post('provinsi');
+        $data['jumlah_penduduk'] =    $this->input->post('jumlah_penduduk');
+        $data['kode_pos'] =    md5($this->input->post('kode_pos'));
+ 
+		$this->M_model->tambah_data_destana($data);
+
+		echo "<script> 
+		alert('Selamat akun Anda berhasil didaftarkan, silahkan tunggu proses aktifasi agar akun Anda dapat digunakan')
+		</script>";
+		// redirect
+	}
 	
 	public function kategori(){$this->load->view('kategori');}
 
