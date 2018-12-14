@@ -54,6 +54,8 @@ class controller extends CI_Controller {
 
 	// Fungsi controller tambah data destana
 	function tambah_dataDesa() {
+		
+		$data['nama_destana'] = $this->input->post('nama_destana');
 		$data['alamat']   =    $this->input->post('alamat');
         $data['kecamatan'] =    $this->input->post('kecamatan');
         $data['kabupaten'] =    $this->input->post('kabupaten');
