@@ -45,7 +45,7 @@
             </div>
           </li>
           <img src="<?= base_url()?>assets/img/p1.png" class="foto mt-1" alt="..." class="rounded-circle">
-          <a class="nav-item nav-link active" href="#">Azay</a>
+          <a class="nav-item nav-link active" href="#"><?php echo $this->session->userdata('ses_nama')?></a>
         </div>
       </div>
     </div>  
