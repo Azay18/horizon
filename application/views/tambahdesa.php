@@ -2,17 +2,12 @@
 <?php require 'f_header.php'; ?>
 
     <!-- form register -->
-    <form class="container" style="padding-top:50px">
+    <form method= "post" class="container" style="padding-top:50px" action="tambah_dataDesa">
     <h4 class="mt-4 text-center">TAMBAH DESA</h4><hr>
     <div class="form-row mt-3">
         <div class="col">
         <label for="namaDesa">Nama Desa</label>
-        <!-- <input type="text" class="form-control" placeholder="Nama Desa"> -->
-        <select id="inputState" name="departemen" class="form-control"> 
-        <?php foreach ($des as $d): ?>
-              <option value="<?php echo $d['nama_destana'];?>"></option>
-        <?php endforeach; ?>
-        </select>
+        <input type="text" class="form-control" placeholder="Nama Desa" name="nama_destana">
         </div>
     </div>
     <div class="form-group mt-3">
