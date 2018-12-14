@@ -35,7 +35,7 @@ class M_model extends CI_Model{
     }
 
     function tambah_dataDestana($data) {
-        $this->db->insert('m_users',$data);
+        $this->db->insert('m_data_destana',$data);
     }
   }
 
