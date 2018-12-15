@@ -133,6 +133,11 @@ class controller extends CI_Controller {
 			$this->load->view('login');
 		}
 	}
+
+	public function select_nama_desa() {
+		$des = $this->M_model->get_data_destana();
+		$this->load->view('buatlaporan',array('des' => $des));
+	}
 	
 	public function fasilitator(){$this->load->view('fasilitator');}
 
