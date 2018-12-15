@@ -21,7 +21,7 @@
                                 <input type="text" class="form-control" placeholder="Email" id="usr" name="email">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Password" id="usr" name="password">
+                                <input type="password" class="form-control" placeholder="Password" id="usr" name="password">
                             </div>
                             <button class="btn btn-success" type="submit">Login</button>
                             <!-- <a href="#" class="btn btn-success">Login</a> -->
