@@ -39,10 +39,10 @@ html, body, #map-canvas {
     padding: 0;
   }
 
-.gambar{
-    height: 300px;
-    width;
-    background-image: url(../img/2.jpg);
+.berita{
+    margin-top: 20px;
+    height: 400px;
+    width: 1070px;
 }
 
 .foto{

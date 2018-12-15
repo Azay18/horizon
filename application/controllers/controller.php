@@ -180,6 +180,10 @@ class controller extends CI_Controller {
 
 	public function berita4(){$this->load->view('berita4');}
 
+	public function berita5(){$this->load->view('berita5');}
+
+	public function berita6(){$this->load->view('berita6');}
+
 	// public function add_data()
 	// {
 	// 	$dep = $this->sdm_model->GetDept();
