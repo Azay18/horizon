@@ -139,6 +139,15 @@ class controller extends CI_Controller {
 		$this->load->view('buatlaporan',array('des' => $des));
 	}
 	
+	public function peta() {
+		$this->load->library('googlemaps');
+
+		$config['kmlLayerURL'] = 'https://www.flickr.com/services/feeds/geo';
+		$this->googlemaps->initialize($config);
+		$data['map'] = $this->googlemaps->create_map();
+
+		$this->load->view('peta', $data);
+	}
 	public function fasilitator(){$this->load->view('fasilitator');}
 
 	public function bnpb(){$this->load->view('bnpb');}
