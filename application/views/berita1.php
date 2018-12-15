@@ -10,7 +10,7 @@
     </div>
 
     <div class="container artikel mt-2">
-    <h1 class="display-4">Pemkab Tukar Tanah Kas Desa Gaum</h1>
+    <h1 class="display-4"><strong>Pemkab Tukar Tanah Kas Desa Gaum</strong></h1>
         <p>
     KARANGANYAR, suaramerdeka.com – Pemkab Karanganyar membeli tanah petani sebagai pengganti tanah kas Desa Gaum, Kecamatan Tasikmadu yang digunakan untuk pengembangan Taman Wisata Dirgantara (Edupark), akhirnya final.
     </p><p>

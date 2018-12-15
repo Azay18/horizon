@@ -5,20 +5,20 @@
   <h4>BERITA TERKINI</h4><hr/>
 <div class="row mb-4">
   <div class="col-md">
-    <div class="card">
-      <a href="<?= base_url()."index.php/controller/berita1"; ?>"><img class="card-img-top" style="height:232px" src="<?php echo base_url() ?>assets/img/01.jpg"></a>
+    <div class="card"><a href="<?= base_url()."index.php/controller/berita2"?>">
+      <img class="card-img-top" style="height:232px" src="<?php echo base_url() ?>assets/img/01.jpg">
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
+        <p class="card-text"><strong>Pesona Desa Wisata Kampoeng Bamboe</strong><br>Menikmati suasana alam di pedesaan sebenarnya merupakan salah satu..</p>
+      </div></a>
     </div>
   </div>
 
   <div class="col-md">
-    <div class="card">
-    <a href="#"><img class="card-img-top" src="<?php echo base_url() ?>assets/img/0.jpg"></a>
+    <div class="card"><a href="<?= base_url()."index.php/controller/berita3"?>">
+    <img class="card-img-top" style="height:232px" src="<?php echo base_url() ?>assets/img/3.jpg">
       <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
+        <p class="card-text"><strong>Kebahagiaan ini cuma dirasakan di desa</strong><br>Adat istiadat di desa pun masih sangat terjaga..</p>
+      </div></a>
     </div>
   </div>
 
@@ -44,7 +44,7 @@
 
   <div class="col-md">
     <div class="card">
-    <img class="card-img-top" src="<?php echo base_url() ?>assets/img/3.jpg">
+    <a href="#"><img class="card-img-top" src="<?php echo base_url() ?>assets/img/0.jpg"></a>
       <div class="card-body">
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
