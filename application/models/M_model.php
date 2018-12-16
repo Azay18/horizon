@@ -75,6 +75,10 @@ class M_model extends CI_Model{
         return $profil->result_array();
     }
 
+    public function GetLaporan(){
+        $laporan = $this->db->query('SELECT * FROM m_laporan');
+        return $laporan->result_array();
+    }
     
   }
 

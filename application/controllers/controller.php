@@ -173,7 +173,10 @@ class controller extends CI_Controller {
 
 	public function buatlaporan(){$this->load->view('buatlaporan');}
 
-	public function laporan(){$this->load->view('laporan');}
+	public function laporan(){
+		$laporan = $this->M_model->GetLaporan();
+		$this->load->view('laporan', array('laporan' => $laporan));
+	}
 
 	public function calonfasilitator(){
 		$cfs = $this->M_model->GetCalon();
