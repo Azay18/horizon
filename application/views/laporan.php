@@ -21,48 +21,25 @@
         <table id="user_data" class="table table-bordered table-striped">  
           <thead>  
               <tr>
-                <th>ID</th>  
+                <th>Nama Fasilitator</th>  
                 <th>Nama Desa</th> 
                 <th>Kecamatan</th>                                                                
                 <th>Tanggal</th>
                 <th>Aksi</th>
               </tr>
           </thead>  
+          <?php foreach ($laporan as $l) { ?>
               <tr>
-                <td>1</td>
-                <td>Nglanjaran</td>
-                <td>Ngaglik</td>
-                <td>01-09-12</td>
-                <td><a class="btn btn-success ml-1" href="#">Ubah</a></td>
+                <td><?= $l['nama_fasilitator']; ?></td>
+                <td><?= $l['nama_desa']; ?></td>
+                <td><?= $l['kecamatan']; ?></td>
+                <td><?= $l['tanggal']; ?></td>
+                <td><a class="btn btn-primary " href="#">Detail</a>
+                    <a class="btn btn-success ml-1" href="#">Ubah</a>
+                    <a class="btn btn-danger ml-1" href="#">Delete</a>
+                </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Manis Kidul</td>
-                <td>Jalaksana</td>
-                <td>01-09-12</td>
-                <td><a class="btn btn-success float-left ml-1" href="#">Ubah</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Wiradesa</td>
-                <td>Tirto</td>
-                <td>01-09-12</td>
-                <td><a class="btn btn-success float-left ml-1" href="#">Ubah</a></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Manis Lor</td>
-                <td>Jalaksana</td>
-                <td>01-09-12</td>
-                <td><a class="btn btn-success float-left ml-1" href="#">Ubah</a></td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Kajen</td>
-                <td>Tirto</td>
-                <td>01-09-12</td>
-                <td><a class="btn btn-success float-left ml-1" href="#">Ubah</a></td>
-              </tr>
+          <?php } ?>
             </table>  
           </div>
 
