@@ -31,7 +31,9 @@ class M_model extends CI_Model{
     public function terima_fasilitator($id){
         $this->uri->segment($id);
         $data = "aktif";
-        $this->db->replace('m_users',$data);
+        $this->db->update('m_users','peran',$id,$data);
+        // $this->db->select("m_users',REPLACE('peran') AS '$data'");
+        // $this->db->where('id_user',$id)->update('m_users','peran',$data);
     }
 
     public function InsertData($tableName, $data) {
@@ -64,7 +66,7 @@ class M_model extends CI_Model{
 
     // Menampilkan Calon Fasilitator
     public function GetCalon(){
-        $cfs = $this->db->query('SELECT * FROM m_not_users');
+        $cfs = $this->db->query('SELECT * FROM m_users WHERE status="nonaktif"');
         return $cfs->result_array();
     }
 
@@ -72,6 +74,8 @@ class M_model extends CI_Model{
         $profil = $this->db->query('SELECT * FROM m_users');
         return $profil->result_array();
     }
+
+    
   }
 
   ?>

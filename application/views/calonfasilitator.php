@@ -38,7 +38,7 @@
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                   Detail
                 </button>
-                <a class="btn btn-primary" href="#">Terima</a>
+                <a class="btn btn-primary" href="<?php echo base_url('index.php/controller/terimaFasilitator/'.$c['id_user']); ?>">Terima</a>
                 <a class="btn btn-danger" href="#"  onclick="return confirm('Anda Yakin Ingin Menolak Calon Ini?')">Tolak</a>
                 </td>
               </tr>
