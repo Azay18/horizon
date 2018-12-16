@@ -1,13 +1,13 @@
-<title>Register</title>
-<?php require 'header.php'; ?>
+<title>Profil</title>
+<?php require 'f_header.php'; ?>
 
     <!-- form register -->
     <form class="container" style="padding-top:50px" method="post" action="register">
-    <h4 class="mt-4 text-center">DAFTAR FASILITATOR</h4><hr>
+    <h4 class="mt-4 text-center">PROFIL FASILITATOR</h4><hr>
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
             <label for="namaLengkap">Nama Lengkap</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap">
+            <input type="text" name="nama" class="form-control" readonly placeholder="<?= $this->session->userdata('ses_nama')?>">
         </div>
         <div class="form-group col-md-3">
         <label for="jenisKelamin">Jenis Kelamin</label>
@@ -18,13 +18,13 @@
         </div>
         <div class="form-group col-md-3">
             <label for="foto">Foto</label>
-            <input class="mt-1" type="file" name="foto" id="foto" required>
+            <img src="<?= $this->session->userdata('ses_foto')?>" width="100">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
-        <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
+        <input type="email" name="email" class="form-control" id="inputEmail4" readonly placeholder="<?= $this->session->userdata('ses_email')?>">
         </div>
         <div class="form-group col-md-6">
         <label for="inputPassword4">Password</label>
@@ -64,9 +64,9 @@
     </div>
     <div class="form-group">
     <label for="alasan">Alasan Bergabung</label>
-    <textarea class="form-control" name="alasan" rows="5" id="alasan"></textarea>
+    <textarea class="form-control" name="alasan" rows="5" id="alasan" readonly placeholder="<?= $this->session->userdata('ses_alasan')?>"></textarea>
     </div>
-    <button type="submit" class="btn btn-success">Daftar</button>
+    <button type="submit" class="btn btn-success">Simpan</button>
     </form>
 
 

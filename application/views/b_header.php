@@ -46,7 +46,7 @@
             </div>
           </li>
           <img src="<?= base_url()?>assets/img/p2.png" class="foto mt-1" height="30px" class="mt-1" alt="">
-          <a class="nav-item nav-link active" href="#">Habib</a>
+          <a class="nav-item nav-link active" href="<?= base_url()."controller/profil"?>"><?php echo $this->session->userdata('ses_nama')?></a>
         </div>
       </div>
     </div>  

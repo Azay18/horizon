@@ -95,6 +95,12 @@ class controller extends CI_Controller {
 		$this->load->view('desa', array('desa' => $desa));
 	}
 
+	// Menampilkan Profil
+	public function profil(){
+		$profil = $this->M_model->GetProfil();
+		$this->load->view('profil', array('profil' => $profil));
+	}
+
 	public function berita(){$this->load->view('berita');}
 
 	public function forum(){$this->load->view('forum');}
@@ -108,7 +114,8 @@ class controller extends CI_Controller {
 		// $this->load->view('register');
 		$this->form_validation->set_rules('nama', 'NAMA','required');
         $this->form_validation->set_rules('jenis_kelamin', 'JENIS_KELAMIN','required');
-        $this->form_validation->set_rules('usia', 'usia','required');
+		$this->form_validation->set_rules('usia', 'usia','required');
+		$this->form_validation->set_rules('foto', 'foto','required');
         $this->form_validation->set_rules('email','EMAIL','required|valid_email');
      	$this->form_validation->set_rules('nomor_hp','NOMOR_HP','required');
         $this->form_validation->set_rules('password','PASSWORD','required');
@@ -125,7 +132,8 @@ class controller extends CI_Controller {
 		} else {
 			$data['nama']   =    $this->input->post('nama');
             $data['jenis_kelamin'] =    $this->input->post('jenis_kelamin');
-            $data['usia'] =    $this->input->post('usia');
+			$data['usia'] =    $this->input->post('usia');
+			$data['foto'] =    $this->input->post('foto');
             $data['email']  =    $this->input->post('email');
             $data['nomor_hp'] =    $this->input->post('nomor_hp');
             $data['password'] =    md5($this->input->post('password'));

@@ -67,6 +67,11 @@ class M_model extends CI_Model{
         $cfs = $this->db->query('SELECT * FROM m_not_users');
         return $cfs->result_array();
     }
+
+    public function GetProfil(){
+        $profil = $this->db->query('SELECT * FROM m_users');
+        return $profil->result_array();
+    }
   }
 
   ?>
