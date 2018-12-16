@@ -180,6 +180,16 @@ class controller extends CI_Controller {
 		$this->load->view('calonfasilitator', array('cfs' => $cfs));
 	}
 
+	public function detailfasilitator(){
+		$calon = $this->M_model->GetCalon();
+	}
+
+	public function cari()
+	{
+		$data = $this->M_model->cariData();
+		$this->load->view('calonfasilitator', $data);
+	}
+
 	public function lihatlaporan(){$this->load->view('lihatlaporan');}
 
 	public function ubahdesa(){$this->load->view('ubahdesa');}

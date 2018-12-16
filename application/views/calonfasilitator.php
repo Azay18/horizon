@@ -35,11 +35,9 @@
                 <td><?= $c['email']; ?></td>
                 <td>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-                  Detail
-                </button>
-                <a class="btn btn-primary" href="<?php echo base_url('index.php/controller/terimaFasilitator/'.$c['id_user']); ?>">Terima</a>
-                <a class="btn btn-danger" href="<?php echo base_url('index.php/controller/tolakFasilitator/'.$c['id_user']); ?>">Tolak</a>
+                <a class="btn btn-success" href="<?php echo base_url('controller/detailfasilitator/'.$c['id_user']); ?>" data-toggle="modal" data-target="#formModal" data-id="<?= $c['id_user']?>">Detail</a>
+                <a class="btn btn-primary" href="<?php echo base_url('controller/terimaFasilitator/'.$c['id_user']); ?>">Terima</a>
+                <a class="btn btn-danger" href="<?php echo base_url('controller/tolakFasilitator/'.$c['id_user']); ?>" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?')">Tolak</a>
                 </td>
               </tr>
           <?php } ?>
@@ -58,17 +56,17 @@
     </div>   
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Data Calon Fasilitator</h5>
+            <h5 class="modal-title" id="formModalLabel">Data Calon Fasilitator</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <label for="">Nama : Ramdani</label><br>
+          <div class="modal-body" method="post">
+            <label for="">Nama : <?= $c['nama'];?></label><br>
             <label for="">Email : ramdani@gmail.com</label><br>
             <label for="">Nomor HP : 087666554456</label><br>
             <label for="">Usia : 19</label><br>

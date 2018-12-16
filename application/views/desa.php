@@ -42,7 +42,7 @@
                 <td><?= $d['jenis_destana']; ?></td>
                 <td>
                   <a class="btn btn-success float-left ml-1" href="#">Ubah</a>
-                  <a class="btn btn-danger float-left ml-1" href="#">Hapus</a>
+                  <a class="btn btn-danger float-left ml-1" href="#" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?')">Hapus</a>
                 </td>
               </tr>
               <?php } ?>

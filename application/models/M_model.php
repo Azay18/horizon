@@ -88,6 +88,14 @@ class M_model extends CI_Model{
         $laporan = $this->db->query('SELECT * FROM m_laporan');
         return $laporan->result_array();
     }
+
+    public function cariData(){
+        $keyword = $_POST['keyword'];
+        $query = "SELECT * FROM m_users WHERE nama LIKE :keyword";
+        $this->db->query($query);
+        $this->db->bind('keyword', "%$keyword%");
+        return $this->db->resultSet();
+    }
     
   }
 
