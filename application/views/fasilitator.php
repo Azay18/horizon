@@ -55,7 +55,7 @@ keseluruhan pada peta yang tersedia pada portal tersebut.</p>
 
         <div class="row mb-4">
           <div class="col-md">
-          <div class="card"><a href="<?=base_url()."index.php/controller/berita6"?>">
+          <div class="card"><a href="<?=base_url()."controller/berita6"?>">
             <img class="card-img-top" src="<?php echo base_url() ?>assets/img/5.jpg">
               <div class="card-body">
                 <p class="card-text"><strong>Desa Kulon Progo Masuk Ranah Digital</strong><br>KULON PROGO, bisniswisata.co.id: Organisasi biro perjalanan wisata</p>
@@ -63,7 +63,7 @@ keseluruhan pada peta yang tersedia pada portal tersebut.</p>
             </div></a>
           </div>
           <div class="col-md">
-          <div class="card"><a href="<?= base_url()."index.php/controller/berita3"?>">
+          <div class="card"><a href="<?= base_url()."controller/berita3"?>">
             <img class="card-img-top" style="height:232px" src="<?php echo base_url() ?>assets/img/3.jpg">
               <div class="card-body">
                 <p class="card-text"><strong>Kebahagiaan ini cuma dirasakan di desa</strong><br>Brilio.net - Kamu yang berasal atau tinggal di desa nggak perlu malu sama teman</p>
@@ -71,7 +71,7 @@ keseluruhan pada peta yang tersedia pada portal tersebut.</p>
             </div>
           </div>
           <div class="col-md">
-          <div class="card"><a href="<?=base_url()."index.php/controller/berita1"?>">
+          <div class="card"><a href="<?=base_url()."controller/berita1"?>">
             <img class="card-img-top" src="<?php echo base_url() ?>assets/img/2.jpg">
               <div class="card-body">
                 <p class="card-text"><strong>Pemkab Tukar Tanah Kas Desa Gaum</strong><br>Pemkab Karanganyar membeli tanah petani sebagai pengganti tanah kas Desa Gaum</p>

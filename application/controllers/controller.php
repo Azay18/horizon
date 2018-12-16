@@ -60,7 +60,7 @@ class controller extends CI_Controller {
  
 		$this->M_model->tambah_dataDestana($data);
 	
-		redirect('controller/fasilitator');
+		redirect('controller/desa');
 	}
 
 	// Tampilkan data nama destana di view form tambah destana (select choice)
@@ -84,7 +84,16 @@ class controller extends CI_Controller {
 		redirect('controller/indikator');
 	}
 
-	public function kategori(){$this->load->view('kategori');}
+	// Menampilkan Data Desa
+	public function kategori(){
+		$desa = $this->M_model->GetDesa();
+		$this->load->view('kategori', array('desa' => $desa));
+	}
+
+	public function desa(){
+		$desa = $this->M_model->GetDesa();
+		$this->load->view('desa', array('desa' => $desa));
+	}
 
 	public function berita(){$this->load->view('berita');}
 
@@ -152,15 +161,16 @@ class controller extends CI_Controller {
 
 	public function bnpb(){$this->load->view('bnpb');}
 
-	public function desa(){$this->load->view('desa');}
-
 	public function tambahdesa(){$this->load->view('tambahdesa');}
 
 	public function buatlaporan(){$this->load->view('buatlaporan');}
 
 	public function laporan(){$this->load->view('laporan');}
 
-	public function calonfasilitator(){$this->load->view('calonfasilitator');}
+	public function calonfasilitator(){
+		$cfs = $this->M_model->GetCalon();
+		$this->load->view('calonfasilitator', array('cfs' => $cfs));
+	}
 
 	public function lihatlaporan(){$this->load->view('lihatlaporan');}
 

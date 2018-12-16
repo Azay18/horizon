@@ -20,7 +20,6 @@
         <table id="user_data" class="table table-bordered table-striped">  
           <thead>  
               <tr>
-                <th>ID</th>  
                 <th>Nama Desa</th> 
                 <th>Kecamatan</th>
                 <th>Kabupaten</th>                                                                 
@@ -28,46 +27,15 @@
                 <th>Kategori</th>
               </tr>
           </thead>  
+          <?php foreach ($desa as $d) { ?>
               <tr>
-                <td>1</td>
-                <td>Nglanjaran</td>
-                <td>Ngaglik</td>
-                <td>Sleman</td>
-                <td>Yogyakarta</td>
-                <td>Utama</td>
+                <td><?= $d['nama_destana']; ?></td>
+                <td><?= $d['kecamatan']; ?></td>
+                <td><?= $d['kabupaten']; ?></td>
+                <td><?= $d['provinsi']; ?></td>
+                <td><?= $d['jenis_destana']; ?></td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Manis Kidul</td>
-                <td>Jalaksana</td>
-                <td>Kuningan</td>
-                <td>Jawa Barat</td>
-                <td>Madya</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Wiradesa</td>
-                <td>Tirto</td>
-                <td>Pekalongan</td>
-                <td>Jawa Tengah</td>
-                <td>Utama</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Manis Lor</td>
-                <td>Jalaksana</td>
-                <td>Kuningan</td>
-                <td>Jawa Barat</td>
-                <td>Pratama</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Kajen</td>
-                <td>Tirto</td>
-                <td>Pekalongan</td>
-                <td>Jawa Tengah</td>
-                <td>Madya</td>
-              </tr>
+          <?php } ?>
           </table>  
         </div>  
 

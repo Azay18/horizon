@@ -21,87 +21,31 @@
         <table id="user_data" class="table table-bordered table-striped">  
           <thead>  
               <tr>
-                <th>ID</th>  
                 <th>Nama Desa</th>
-                <th>Jumlah Warga</th>  
+                <th>Jumlah Penduduk</th>  
                 <th>Kecamatan</th>
                 <th>Kabupaten</th>                                                                 
                 <th>Provinsi</th>
-                <th>Fasilitas</th>
+                <th>Kode Pos</th>
                 <th>Kategori</th>
                 <th class="text-center">Aksi</th>
               </tr>
-          </thead>    
+          </thead>  
+          <?php foreach ($desa as $d) { ?>  
               <tr>
-                <td>1</td>
-                <td>Nglanjaran</td>
-                <td>2320</td>
-                <td>Ngaglik</td>
-                <td>Sleman</td>
-                <td>Yogyakarta</td>
-                <td>Baik</td>
-                <td>Utama</td>
-                <td>
-                  <a class="btn btn-success float-left ml-1" href="<?= base_url()."index.php/controller/ubahdesa"?>">Ubah</a>
-                  <a class="btn btn-danger float-left ml-1" href="#" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?')">Hapus</a>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Manis Kidul</td>
-                <td>1000</td>
-                <td>Jalaksana</td>
-                <td>Kuningan</td>
-                <td>Jawa Barat</td>
-                <td>Baik</td>
-                <td>Madya</td>
+                <td><?= $d['nama_destana']; ?></td>
+                <td><?= $d['jumlah_penduduk']; ?></td>
+                <td><?= $d['kecamatan']; ?></td>
+                <td><?= $d['kabupaten']; ?></td>
+                <td><?= $d['provinsi']; ?></td>
+                <td><?= $d['kode_pos']; ?></td>
+                <td><?= $d['jenis_destana']; ?></td>
                 <td>
                   <a class="btn btn-success float-left ml-1" href="#">Ubah</a>
                   <a class="btn btn-danger float-left ml-1" href="#">Hapus</a>
                 </td>
               </tr>
-              <tr>
-                <td>3</td>
-                <td>Wiradesa</td>
-                <td>3215</td>
-                <td>Tirto</td>
-                <td>Pekalongan</td>
-                <td>Jawa Tengah</td>
-                <td>Baik</td>
-                <td>Utama</td>
-                <td>
-                  <a class="btn btn-success float-left ml-1" href="#">Ubah</a>
-                  <a class="btn btn-danger float-left ml-1" href="#">Hapus</a>
-                </td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Manis Lor</td>
-                <td>1040</td>
-                <td>Jalaksana</td>
-                <td>Kuningan</td>
-                <td>Jawa Barat</td>
-                <td>Baik</td>
-                <td>Pratama</td>
-                <td>
-                  <a class="btn btn-success float-left ml-1" href="#">Ubah</a>
-                  <a class="btn btn-danger float-left ml-1" href="#">Hapus</a>
-                </td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Kajen</td>
-                <td>2140</td>
-                <td>Tirto</td>
-                <td>Pekalongan</td>
-                <td>Jawa Tengah</td>
-                <td>Baik</td>
-                <td>Madya</td>
-                <td>
-                  <a class="btn btn-success float-left ml-1" href="#">Ubah</a>
-                  <a class="btn btn-danger float-left ml-1" href="#">Hapus</a>
-                </td>
-              </tr>
+              <?php } ?>
             </table>  
           </div>  
 
@@ -119,7 +63,7 @@
             </div>
           
           <div class="col-md-6 text-right">
-            <a class="btn btn-primary" href="<?= base_url()."index.php/controller/tambahdesa";?>">Tambah Data Desa</a>
+            <a class="btn btn-primary" href="<?= base_url()."controller/tambahdesa";?>">Tambah Data Desa</a>
             </div>
           </div>
     </div>   

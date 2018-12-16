@@ -38,7 +38,7 @@
         <input type="text" class="form-control" id="inputKode" name="kode_pos">
         </div>
     </div>
-    <a href="<?= base_url()."index.php/controller/fasilitator"?>" class="btn btn-secondary">Kembali</a>
+    <a href="<?= base_url()."controller/desa"?>" class="btn btn-secondary">Kembali</a>
     <button type="submit" class="btn btn-success">Simpan</button>
     </form>
 

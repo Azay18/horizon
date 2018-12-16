@@ -20,44 +20,29 @@
         <table id="user_data" class="table table-bordered table-striped">  
           <thead>  
               <tr>
-                <th>ID</th>  
                 <th>Nama Calon</th> 
                 <th>Alamat</th>
                 <th>Nomor HP</th>
+                <th>Email</th>
                 <th>Aksi</th>
               </tr>
           </thead> 
+          <?php foreach ($cfs as $c) { ?>
               <tr>
-                <td>1</td>
-                <td>Ramdani</td>
-                <td>Sleman</td>
-                <td>085436278799</td>
+                <td><?= $c['nama']; ?></td>
+                <td><?= $c['alamat']; ?></td>
+                <td><?= $c['nomor_hp']; ?></td>
+                <td><?= $c['email']; ?></td>
                 <td>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                   Detail
                 </button>
                 <a class="btn btn-primary" href="#">Terima</a>
-                <a class="btn btn-danger" href="#"  onclick="return confirm('Anda Yakin Ingin Menolak Calon Ini?')">Tolak</a></td>
+                <a class="btn btn-danger" href="#"  onclick="return confirm('Anda Yakin Ingin Menolak Calon Ini?')">Tolak</a>
+                </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Salman</td>
-                <td>Condongcatur</td>
-                <td>089765444566</td>
-                <td><a class="btn btn-success" href="#">Detail</a>
-                  <a class="btn btn-primary" href="#">Terima</a>
-                <a class="btn btn-danger" href="#">Tolak</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Fakru</td>
-                <td>Bantul</td>
-                <td>087655678776</td>
-                <td><a class="btn btn-success" href="#">Detail</a>
-                <a class="btn btn-primary" href="#">Terima</a>
-                <a class="btn btn-danger" href="#">Tolak</a></td>
-              </tr> 
+          <?php } ?>
             </table>  
           </div>  
 

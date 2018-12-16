@@ -80,7 +80,7 @@
             </div>
           
           <div class="col-md-6 text-right">
-            <a class="btn btn-primary" href="<?= base_url()."index.php/controller/buatlaporan";?>">Buat Laporan</a>
+            <a class="btn btn-primary" href="<?= base_url()."controller/buatlaporan";?>">Buat Laporan</a>
             </div>
           </div>
 

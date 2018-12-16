@@ -55,6 +55,18 @@ class M_model extends CI_Model{
     public function get_nama_fasilitator($email,$password) {
         $nam = $this->db->query("SELECT m_users.nama WHERE email='$email' AND password=MD5('$password') LIMIT 1");
     }
+
+    // Menampilkan Data Desa
+    public function GetDesa(){
+        $desa = $this->db->query('SELECT * FROM m_data_destana');
+        return $desa->result_array();
+    }
+
+    // Menampilkan Calon Fasilitator
+    public function GetCalon(){
+        $cfs = $this->db->query('SELECT * FROM m_not_users');
+        return $cfs->result_array();
+    }
   }
 
   ?>
