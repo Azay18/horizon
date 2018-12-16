@@ -39,7 +39,7 @@
                   Detail
                 </button>
                 <a class="btn btn-primary" href="<?php echo base_url('index.php/controller/terimaFasilitator/'.$c['id_user']); ?>">Terima</a>
-                <a class="btn btn-danger" href="#"  onclick="return confirm('Anda Yakin Ingin Menolak Calon Ini?')">Tolak</a>
+                <a class="btn btn-danger" href="<?php echo base_url('index.php/controller/tolakFasilitator/'.$c['id_user']); ?>">Tolak</a>
                 </td>
               </tr>
           <?php } ?>
@@ -83,7 +83,5 @@
         </div>
       </div>
     </div>
-
-
 
 <?php require 'footer.php'; ?>

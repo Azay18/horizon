@@ -29,12 +29,21 @@ class M_model extends CI_Model{
     }
     
     public function terima_fasilitator($id){
-        $this->uri->segment($id);
-        $data = "aktif";
-        $this->db->update('m_users','peran',$id,$data);
+        // $this->uri->segment($id);
+        $data = 'aktif';
+        $this->db->set('status',$data);
+        $this->db->where('id_user', $id);
+        $this->db->update('m_users');
         // $this->db->select("m_users',REPLACE('peran') AS '$data'");
         // $this->db->where('id_user',$id)->update('m_users','peran',$data);
     }
+
+    
+    public function tolak_fasilitator($id){
+	    $this->db->where('id_user', $id);
+	    $query = $this->db->delete('m_users');
+    }
+
 
     public function InsertData($tableName, $data) {
 		$res = $this->db->insert($tableName, $data);

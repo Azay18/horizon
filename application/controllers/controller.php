@@ -26,12 +26,12 @@ class controller extends CI_Controller {
         if($cek_bpbd->num_rows() > 0){ 
             $data=$cek_bpbd->row_array();
             $this->session->set_userdata('masuk',TRUE);
-             if($data['peran']=='bnpb'){ 
+             if($data['peran']=='bnpb' && $data['status']=='aktif'){ 
                 $this->session->set_userdata('peran','bnpb');
                 $this->session->set_userdata('ses_email',$data['email']);
                 $this->session->set_userdata('ses_nama',$data['nama']);
                 redirect('controller/bnpb');
-             }else if ($data['peran']=='fasilitator') { 
+             }else if ($data['peran']=='fasilitator' && $data['status']=='aktif') { 
                 $this->session->set_userdata('peran','fasilitator');
                 $this->session->set_userdata('ses_email',$data['email']);
                 $this->session->set_userdata('ses_nama',$data['nama']);
@@ -125,9 +125,6 @@ class controller extends CI_Controller {
 		$this->form_validation->set_rules('alamat','ALAMAT','required');
 
 		if($this->form_validation->run() == FALSE) {
-			echo " <script> 
-			alert('Terdapat kesalahan')
-			</script>";
 			$this->load->view('register');
 		} else {
 			$data['nama']   =    $this->input->post('nama');
@@ -205,6 +202,15 @@ class controller extends CI_Controller {
 	public function terimaFasilitator() {
 		$id=$this->uri->segment(3);
 		$this->M_model->terima_fasilitator($id);
+		redirect('controller/calonfasilitator');
+		// $this->load->view('calonfasilitator');
+	}
+
+	public function tolakFasilitator() {
+		$id = $this->uri->segment(3);
+		$proses = $this->M_model->tolak_fasilitator($id);
+		redirect('controller/calonfasilitator');
+		// $this->load->view('calonfasilitator');
 	}
 	// public function add_data()
 	// {
