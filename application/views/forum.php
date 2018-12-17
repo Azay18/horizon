@@ -34,7 +34,18 @@
           <p>B aja.</p>
         </div>
       </div><hr>
-
+      <form action="">
+      <div class="form-row mt-3">
+            <div class="col">
+              <label for="namaDiskusi">Masukan Nama</label>
+              <input type="text" class="form-control" placeholder="Nama" name="nama_diskusi">
+            </div>
+            <div class="col">
+              <label for="komentar">Komentar</label>
+              <input type="text" class="form-control" placeholder="komentar" name="komentar">
+            </div>
+        </div>
+      </form>
     </div>
 
     

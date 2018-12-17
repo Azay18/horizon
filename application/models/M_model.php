@@ -96,7 +96,18 @@ class M_model extends CI_Model{
         $this->db->bind('keyword', "%$keyword%");
         return $this->db->resultSet();
     }
+
+    public function HapusData($tableId, $where)
+	{
+		$res = $this->db->delete($tableId, $where);
+		return $res;
+    }
     
+    public function HapusLaporan($tableId, $where)
+	{
+		$lap = $this->db->delete($tableId, $where);
+		return $lap;
+	}
   }
 
   ?>

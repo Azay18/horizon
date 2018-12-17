@@ -168,7 +168,10 @@ class controller extends CI_Controller {
 
 	public function tambahdesa(){$this->load->view('tambahdesa');}
 
-	public function buatlaporan(){$this->load->view('buatlaporan');}
+	public function buatlaporan(){
+		$desa = $this->M_model->GetDesa();
+		$this->load->view('buatlaporan', array('desa' => $desa));
+	}
 
 	public function laporan(){
 		$laporan = $this->M_model->GetLaporan();
@@ -192,8 +195,11 @@ class controller extends CI_Controller {
 
 	public function lihatlaporan(){$this->load->view('lihatlaporan');}
 
-	public function ubahdesa(){$this->load->view('ubahdesa');}
-
+	public function ubahdesa(){
+		$desa = $this->M_model->GetDesa();
+		$this->load->view('ubahdesa');
+	}
+	
 	public function indikator(){$this->load->view('indikator');}
 
 	public function detaillaporan(){$this->load->view('detaillaporan');}
@@ -212,6 +218,8 @@ class controller extends CI_Controller {
 
 	public function berita6(){$this->load->view('berita6');}
 
+	public function ubahlaporan(){$this->load->view('ubahlaporan');}
+
 	public function terimaFasilitator() {
 		$id=$this->uri->segment(3);
 		$this->M_model->terima_fasilitator($id);
@@ -225,6 +233,23 @@ class controller extends CI_Controller {
 		redirect('controller/calonfasilitator');
 		// $this->load->view('calonfasilitator');
 	}
+
+	public function hapus_data($id_destana){
+		$where = array('id_destana' => $id_destana);
+		$res = $this->M_model->HapusData('m_data_destana', $where);
+		if ($res>=1) {
+			redirect('controller/desa');
+		}
+	}
+
+	public function hapus_laporan($id_laporan){
+		$where = array('id_laporan' => $id_laporan);
+		$lap = $this->M_model->HapusData('m_laporan', $where);
+		if ($lap>=1) {
+			redirect('controller/laporan');
+		}
+	}
+	
 	// public function add_data()
 	// {
 	// 	$dep = $this->sdm_model->GetDept();
