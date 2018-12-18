@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2018 at 06:24 PM
+-- Generation Time: Dec 18, 2018 at 07:55 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -32,7 +32,7 @@ CREATE TABLE `m_data_destana` (
   `id_destana` int(11) NOT NULL,
   `nama_destana` varchar(100) NOT NULL,
   `nama_kepala_destana` varchar(100) NOT NULL,
-  `jenis_destana` varchar(100) NOT NULL,
+  `jenis_destana` enum('Belum Dikategorikan','Utama','Madya','Pratama','Bukan Desa Tangguh Bencana') NOT NULL,
   `jumlah_penduduk` int(11) NOT NULL,
   `alamat` varchar(200) NOT NULL,
   `provinsi` varchar(50) NOT NULL,
@@ -47,7 +47,15 @@ CREATE TABLE `m_data_destana` (
 --
 
 INSERT INTO `m_data_destana` (`id_destana`, `nama_destana`, `nama_kepala_destana`, `jenis_destana`, `jumlah_penduduk`, `alamat`, `provinsi`, `kabupaten`, `kecamatan`, `kelurahan`, `kode_pos`) VALUES
-(7, 'Kimpulang', '', 'Belum Dikategorikan', 341, 'Jalan Kaliurang KM 14,5', 'Yogyakarta', 'Sleman', 'Sleman', '', 23123);
+(7, 'Kimpulang', '', 'Belum Dikategorikan', 341, 'Jalan Kaliurang KM 14,5', 'Yogyakarta', 'Sleman', 'Sleman', '', 23123),
+(8, '', '', '', 0, '', '', '', '', '', 0),
+(9, '', '', '', 0, '', '', '', '', '', 0),
+(10, '', '', '', 0, '', '', '', '', '', 0),
+(11, '', '', '', 0, '', '', '', '', '', 0),
+(12, '', '', '', 0, '', '', '', '', '', 0),
+(13, '', '', '', 0, '', '', '', '', '', 0),
+(14, '', '', '', 0, '', '', '', '', '', 0),
+(15, '', '', 'Utama', 0, '', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -71,8 +79,8 @@ CREATE TABLE `m_laporan` (
   `tanggal_laporan` date NOT NULL,
   `nama_fasilitator` varchar(100) NOT NULL,
   `nama_desa` varchar(100) NOT NULL,
-  `jumlah_ya` int(11) NOT NULL,
-  `jumlah_tidak` int(11) NOT NULL,
+  `jumlah_ya` int(100) NOT NULL,
+  `jumlah_tidak` int(100) NOT NULL,
   `ya1` int(11) DEFAULT NULL,
   `ya2` int(11) NOT NULL,
   `ya3` int(11) NOT NULL,
@@ -86,15 +94,17 @@ CREATE TABLE `m_laporan` (
   `tidak4` int(11) NOT NULL,
   `tidak5` int(11) NOT NULL,
   `tidak6` int(11) NOT NULL,
-  `tidak7` int(11) NOT NULL
+  `tidak7` int(11) NOT NULL,
+  `jenis_destana` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `m_laporan`
 --
 
-INSERT INTO `m_laporan` (`id_laporan`, `tanggal_laporan`, `nama_fasilitator`, `nama_desa`, `jumlah_ya`, `jumlah_tidak`, `ya1`, `ya2`, `ya3`, `ya4`, `ya5`, `ya6`, `ya7`, `tidak1`, `tidak2`, `tidak3`, `tidak4`, `tidak5`, `tidak6`, `tidak7`) VALUES
-(15, '2018-12-18', 'Patimura', 'Kimpulan', 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1);
+INSERT INTO `m_laporan` (`id_laporan`, `tanggal_laporan`, `nama_fasilitator`, `nama_desa`, `jumlah_ya`, `jumlah_tidak`, `ya1`, `ya2`, `ya3`, `ya4`, `ya5`, `ya6`, `ya7`, `tidak1`, `tidak2`, `tidak3`, `tidak4`, `tidak5`, `tidak6`, `tidak7`, `jenis_destana`) VALUES
+(15, '2018-12-18', 'Patimura', 'Kimpulan', 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 'Belum Dikategorikan'),
+(16, '2018-12-19', 'Patimura', 'Kimpulang', 5, 5, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 'Belum Dikategorikan');
 
 -- --------------------------------------------------------
 
@@ -205,13 +215,13 @@ ALTER TABLE `m_users`
 -- AUTO_INCREMENT for table `m_data_destana`
 --
 ALTER TABLE `m_data_destana`
-  MODIFY `id_destana` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_destana` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `m_laporan`
 --
 ALTER TABLE `m_laporan`
-  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_laporan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `m_not_users`
