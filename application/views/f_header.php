@@ -30,9 +30,9 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link active" href="<?= base_url()."controller/fasilitator"; ?>">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link active" href="<?php echo base_url()."controller/kategori"; ?>">Kategori</a>
-          <a class="nav-item nav-link active" href="<?php echo base_url()."controller/berita"; ?>">Berita</a>
-          <a class="nav-item nav-link active" href="<?php echo base_url()."controller/forum"; ?>">Forum</a>
+          <a class="nav-item nav-link active" href="<?php echo base_url()."controller/f_kategori"; ?>">Kategori</a>
+          <a class="nav-item nav-link active" href="<?php echo base_url()."controller/f_berita"; ?>">Berita</a>
+          <a class="nav-item nav-link active" href="<?php echo base_url()."controller/f_forum"; ?>">Forum</a>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Menu

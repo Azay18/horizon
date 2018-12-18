@@ -125,7 +125,7 @@ class controller extends CI_Controller {
 	// 	$this->load->view('ubahdesa', $data);
 	// }
 
-	public function kategori(){
+	public function kategorib(){
 		$id=$this->uri->segment(3);
 		$this->M_model->kategorikan($id);
 		redirect('controller/lihatlaporan');
@@ -142,6 +142,11 @@ class controller extends CI_Controller {
 		$this->load->view('desa', array('desa' => $desa));
 	}
 
+	public function b_desa(){
+		$desa = $this->M_model->GetDesa();
+		$this->load->view('b_desa', array('desa' => $desa));
+	}
+
 	// Menampilkan Profil
 	public function profil(){
 		$profil = $this->M_model->GetProfil();
@@ -149,8 +154,12 @@ class controller extends CI_Controller {
 	}
 
 	public function berita(){$this->load->view('berita');}
+	public function f_berita(){$this->load->view('f_berita');}
+	public function b_berita(){$this->load->view('b_berita');}
 
 	public function forum(){$this->load->view('forum');}
+	public function f_forum(){$this->load->view('f_forum');}
+	public function b_forum(){$this->load->view('b_forum');}
 
 	public function loadRegister() {
 		$this->load->view('register');
@@ -222,6 +231,19 @@ class controller extends CI_Controller {
 
 	public function buatlaporan(){$this->load->view('buatlaporan');}
 
+	public function kategori(){
+		$desa = $this->M_model->GetDesa();
+		$this->load->view('kategori', array ('desa' => $desa));
+	}
+	public function f_kategori(){
+		$desa = $this->M_model->GetDesa();
+		$this->load->view('f_kategori', array ('desa' => $desa));
+	}
+	public function b_kategori(){
+		$desa = $this->M_model->GetDesa();
+		$this->load->view('b_kategori', array ('desa' => $desa));
+	}
+
 	public function laporan(){
 		$laporan = $this->M_model->GetLaporan();
 		$this->load->view('laporan', array('laporan' => $laporan));
@@ -236,15 +258,17 @@ class controller extends CI_Controller {
 	public function detailcalon($id_user){
 		$cfs = $this->M_model->GetCalon(" where id_user = '$id_user'");
 			$data = array(
-				"nama" => $user[0]['nama'],
-				"email" => $user[0]['email'],
-				"nomor_hp" => $user[0]['nomor_hp'],
-				"usia" => $user[0]['usia']
-				// "provinsi" => $user[0]['provinsi'],
-				// "alamat" => $user[0]['alamat'],
-				// "kode_pos" => $user[0]['kode_pos']
+				"nama" => $cfs[0]['nama'],
+				"email" => $cfs[0]['email'],
+				"nomor_hp" => $cfs[0]['nomor_hp'],
+				"usia" => $cfs[0]['usia'],
+				"jenis_kelamin" => $cfs[0]['jenis_kelamin'],
+				"jenjang_pendidikan" => $cfs[0]['jenjang_pendidikan'],
+				"alamat" => $cfs[0]['alamat'],
+				"alasan" => $cfs[0]['alasan'],
+				"kode_pos" => $cfs[0]['kode_pos']
 			);
-			$this->load->view('calonfasilitator', $data);
+			$this->load->view('detailfasilitator', $data);
 	}
 
 	public function daftarLaporan() {	
@@ -328,6 +352,44 @@ class controller extends CI_Controller {
 			$res = $this->M_model->UpdateData('m_data_destana',$data_update,$where);
 			if ($res>=1) {
 				redirect('controller/desa');
+			}
+		}
+
+		public function bedit_data($id_destana){
+			$destana = $this->M_model->GetDesa(" where id_destana = '$id_destana'");
+			$data = array(
+				"nama_destana" => $destana[0]['nama_destana'],
+				"jumlah_penduduk" => $destana[0]['jumlah_penduduk'],
+				"kecamatan" => $destana[0]['kecamatan'],
+				"kabupaten" => $destana[0]['kabupaten'],
+				"provinsi" => $destana[0]['provinsi'],
+				"alamat" => $destana[0]['alamat'],
+				"kode_pos" => $destana[0]['kode_pos']
+			);
+			$this->load->view('b_ubahdesa', $data);
+		}
+
+		public function bdo_update(){
+			$nama_destana = $_POST['nama_destana'];
+			$jumlah_penduduk = $_POST['jumlah_penduduk'];
+			$kecamatan = $_POST['kecamatan'];
+			$kabupaten = $_POST['kabupaten'];
+			$provinsi = $_POST['provinsi'];
+			$alamat = $_POST['alamat'];
+			$kode_pos = $_POST['kode_pos'];
+			$data_update = array(
+				'nama_destana' => $nama_destana,
+				'jumlah_penduduk' => $jumlah_penduduk,
+				'kecamatan' => $kecamatan,
+				'kabupaten' => $kabupaten,
+				'provinsi' => $provinsi,
+				'alamat' => $alamat,
+				'kode_pos' => $kode_pos
+			);
+			$where = array('kecamatan' => $kecamatan);
+			$res = $this->M_model->UpdateData('m_data_destana',$data_update,$where);
+			if ($res>=1) {
+				redirect('controller/b_desa');
 			}
 		}
 

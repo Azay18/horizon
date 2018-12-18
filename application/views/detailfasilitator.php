@@ -1,72 +1,41 @@
-<title>Register</title>
-<?php require 'header.php'; ?>
+<title>Detail Calon</title>
+<?php require 'b_header.php'; ?>
 
     <!-- form register -->
     <form class="container" style="padding-top:50px" method="post" action="register">
-    <h4 class="mt-4 text-center">DAFTAR FASILITATOR</h4><hr>
+    <h4 class="mt-4 text-center">DETAIL CALON FASILITATOR</h4><hr>
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
-            <label for="namaLengkap">Nama Lengkap</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
+            <label for="namaLengkap">Nama Lengkap : <?= $nama;?></label>
         </div>
         <div class="form-group col-md-3">
-        <label for="jenisKelamin">Jenis Kelamin</label>
-        <select class="custom-select" name="jenis_kelamin">
-            <option value="laki">Laki-Laki</option>
-            <option value="perempuan">Perempuan</option>
-        </select>
+        <label for="jenisKelamin">Jenis Kelamin : <?= $jenis_kelamin;?></label>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">Nomor Hp : <?= $nomor_hp;?></label>
         </div>
         <div class="form-group col-md-3">
-            <label for="foto">Foto</label>
-            <input class="mt-1" type="file" name="foto" id="foto">
+        <label for="inputState">Usia : <?= $usia;?></label>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-        <label for="inputEmail4">Email</label>
-        <input required type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
-        </div>
-        <div class="form-group col-md-6">
-        <label for="inputPassword4">Password</label>
-        <input required type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-        <label for="inputHp">Nomor HP</label>
-        <input required type="text" name="nomor_hp" class="form-control" id="inputHP">
-        </div>
-        <div class="form-group col-md-3">
-        <label for="inputState">Usia</label>
-        <input required type="number" name="usia" class="form-control" id="inputHP">
-        </div>
-        <div class="form-group col-md-3">
-        <label for="pendidikan">Jejang Pendidikan</label>
-        <select class="custom-select" name="jenjang_pendidikan">
-            <option value="sd">SD</option>
-            <option value="smp">SMP</option>
-            <option value="sma">SMA</option>
-            <option value="S1">S1</option>
-            <option value="S2">S2</option>
-            <option value="S3">S3</option>
-        </select>
-        </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="inputAddress">Alamat</label>
-            <input required type="text" name="alamat" class="form-control" id="inputAddress" placeholder="Alamat">
-        </div>
+            <label for="inputAddress">Alamat : <?= $alamat;?></label>
+            </div>
             <div class="form-group col-md-2">
-            <label for="inputKode">Kode Pos</label>
-            <input required type="text" name="kode_pos" class="form-control" id="inputKode">
+            <label for="inputKode">Kode Pos : <?= $kode_pos;?></label>
             </div>
     </div>
-    <div class="form-group">
-    <label for="alasan">Alasan Bergabung</label>
-    <textarea required class="form-control" name="alasan" rows="5" id="alasan"></textarea>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+        <label for="pendidikan">Jejang Pendidikan : <?= $jenjang_pendidikan;?></label>
+        </div>
     </div>
-    <button type="submit" class="btn btn-success">Daftar</button>
+    <div class="form-group">
+    <label for="alasan">Alasan Bergabung : <?= $alasan;?></label>
+    </div>
+    <a type="submit" class="btn btn-secondary" href="<?= base_url()."controller/calonfasilitator";?>">Kembali</a>
     </form>
 
 

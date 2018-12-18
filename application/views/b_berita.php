@@ -1,5 +1,5 @@
 <title>Berita</title>
-<?php require 'f_header.php'; ?>
+<?php require 'b_header.php'; ?>
 
 <div class="container mt-4" style="padding-top:50px">
   <h4 class="text-center">BERITA TERKINI</h4><hr/>

@@ -6,17 +6,17 @@
     <h4 class="mt-4 text-center">IDENTITAS LAPORAN</h4><hr>
     <div class="form-row mt-3">
         <div class="col">
-        <label for="namaFasilitator">Nama Fasilitator :<?php foreach ($data as $d) { echo $d['nama_fasilitator'];} ?></label>
+        <label for="namaFasilitator">Nama Fasilitator : <?php foreach ($data as $d) { echo $d['nama_fasilitator'];} ?></label>
         <label for=""></label>
         </div>
     </div>
     <div class="form-group mt-3">
-        <label for="inputDesa">Nama Desa :<?php foreach ($data as $d) { echo $d['nama_desa'];} ?></label>
+        <label for="inputDesa">Nama Desa : <?php foreach ($data as $d) { echo $d['nama_desa'];} ?></label>
         <label for=""></label>
     </div>
     <div class="form-row mt-3">
         <div class="col">
-        <label for="namaFasilitator">Tanggal :<?php foreach ($data as $d) { echo $d['tanggal_laporan'];} ?></label>
+        <label for="namaFasilitator">Tanggal : <?php foreach ($data as $d) { echo $d['tanggal_laporan'];} ?></label>
         <label for=""></label>        
         </div>
     </div>
