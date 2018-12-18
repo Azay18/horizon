@@ -148,7 +148,22 @@ class M_model extends CI_Model{
     public function UpdateData($tableId, $data, $where){
 		$res = $this->db->update($tableId, $data, $where);
 		return $res;
-	}
+    }
+
+    public function get_data_laporan($id){
+        // $data=$this->db->select('nama_fasilitator')->get_where('m_laporan',array('id_laporan'=>$id))->row()->nama_fasilitator;
+        // $data = $this->db->query("SELECT * FROM m_laporan WHERE id_laporan='$id'");
+        $this->db->where('id_laporan',$id);
+        $data=$this->db->get('m_laporan');
+        // return $data->row();
+        return $data->result_array();
+    }
+    
+    public function cek_jawaban($id){
+        $this->db->where('id_laporan',$id);
+        $data=$this->db->get('m_laporan');
+        return $data->result_array();
+    }
   }
 
 

@@ -103,10 +103,11 @@ class controller extends CI_Controller {
 		redirect('controller/laporan');
 	}
 
-	// Menampilkan Data Desa
-	public function kategori(){
-		$desa = $this->M_model->GetDesa();
-		$this->load->view('kategori', array('desa' => $desa));
+	public function kategorikan(){
+		$id=$this->uri->segment(3);
+		$data = $this->M_model->get_data_laporan($id);
+		$data2 = $this->M_model->cek_jawaban($id);			//Cek jawaban ya / tidak
+		$this->load->view('kategorikan', array('data' =>$data, 'data2'=>$data2));
 	}
 
 	public function desa(){
@@ -251,10 +252,6 @@ class controller extends CI_Controller {
 
 	public function ubahlaporan(){$this->load->view('ubahlaporan');}
 
-	public function kategorikan(){
-		$this->load->view('kategorikan');
-	}
-
 	public function terimaFasilitator() {
 		$id=$this->uri->segment(3);
 		$this->M_model->terima_fasilitator($id);
@@ -300,7 +297,7 @@ class controller extends CI_Controller {
 				'alamat' => $alamat,
 				'kode_pos' => $kode_pos
 			);
-			$where = array('jenis_destana' => $jenis_destana);
+			$where = array('kecamatan' => $kecamatan);
 			$res = $this->M_model->UpdateData('m_data_destana',$data_update,$where);
 			if ($res>=1) {
 				redirect('controller/desa');
