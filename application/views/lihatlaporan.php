@@ -36,13 +36,8 @@
                 <td><?= $l['tanggal_laporan']; ?></td>
                 <td>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success" href="<?php echo base_url('index.php/controller/calonfasilitator'.$l['id_laporan']) ?>" data-toggle="modal" data-target="#exampleModal">
-                  Detail
-                </button>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kategoriModal">
-                    Kategorikan
-                </button>
+                <a type="button" class="btn btn-primary" href="<?= base_url()."controller/kategorikan/".$l['id_laporan'];?>">Kategorikan</a>
                 </td>
               </tr>  
                 </td>

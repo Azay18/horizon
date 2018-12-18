@@ -236,6 +236,10 @@ class controller extends CI_Controller {
 
 	public function berita6(){$this->load->view('berita6');}
 
+	public function kategorikan(){
+		$this->load->view('kategorikan');
+	}
+
 	public function terimaFasilitator() {
 		$id=$this->uri->segment(3);
 		$this->M_model->terima_fasilitator($id);
