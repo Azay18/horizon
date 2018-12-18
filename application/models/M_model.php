@@ -83,20 +83,20 @@ class M_model extends CI_Model{
 
     public function kategorikan($id) {
         $jumlah_ya= $this->db->query('SELECT jumlah_ya FROM m_laporan');
-        $kategori="hiya";
-        if($jumlah_ya==0){
-            $kategori="Bukan Desa Tangguh Bencana";
-        } else if($jumlah_ya>0 && $jumlah_ya<3){
-            $kategori="Pratama";
-        } else if($jumlah_ya>3 && $jumlah_ya<5){
-            $kategori="Madya";
-        } else {
-            $kategori="Utama" ;
-        }
-        $this->db->insert('m_data_destana.jenis_destana',$kategori);
-        // $this->db->set('jenis_destana',$kategori);
-        // $this->db->where('id_destana', $id);
-        // $this->db->update('m_data_destana');
+        $kategori = 'hiya';
+        // if($jumlah_ya == '0'){
+        //     $kategori = 'Bukan Desa Tangguh Bencana';
+        // } else if($jumlah_ya >= '0' && $jumlah_ya <= '3'){
+        //     $kategori='Pratama';
+        // } else if($jumlah_ya >= '3' && $jumlah_ya <= '5'){
+        //     $kategori='Madya';
+        // } else {
+        //     $kategori='Utama' ;
+        // }
+        // // $this->db->insert('m_data_destana','jenis_destana','100');
+        $this->db->set('jenis_destana',$kategori);
+        $this->db->where('id_laporan', $id);
+        $this->db->update('m_laporan');
     }
     
     public function get_data_destana() {
@@ -123,6 +123,14 @@ class M_model extends CI_Model{
     public function GetCalon($where=""){
         $cfs = $this->db->query('SELECT * FROM m_users WHERE status="nonaktif"'.$where);
         return $cfs->result_array();
+    }
+
+    public function GetKategori($id){
+        $this->db->where('id_laporan',$id);
+        $data=$this->db->get('m_laporan');
+        return $data->result_array();
+        // $kategori = $this->db->query('SELECT * FROM m_laporan WHERE jenis_destana="Belum Dikategorikan"'.$where);
+        // return $kategori->result_array();
     }
 
     public function GetLaporan(){

@@ -131,6 +131,12 @@ class controller extends CI_Controller {
 		redirect('controller/lihatlaporan');
 	}
 
+	public function dataKategori(){
+		$id = $this->uri->segment(3);
+		$kategori = $this->M_model->GetKategori($id);
+		$this->load->view('kategorikan', array('kategori' => $kategori));
+	}
+
 	public function desa(){
 		$desa = $this->M_model->GetDesa();
 		$this->load->view('desa', array('desa' => $desa));
