@@ -3,8 +3,8 @@
 
 <div class="jumbotron jumbotron-fluid home mt-5">
   <div class="container mt-3 text-center">
-  <h1 class="display-4">Selamat Datang!</h1>
-                <p class="lead">Ini adalah halaman beranda Beranda</p>
+  <h1 class="display-3"> EPODES</h1>
+                <p class="lead">Beranda Umum</p>
                 <hr class="my-4">
                 <p>Portal evaluasi desa tangguh bencana ini merupakan sistem informasi yang berguna memantau
 perkembangan pembangunan desa tangguh bencana dan persebaran program desa tangguh bencana secara

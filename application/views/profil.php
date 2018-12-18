@@ -7,7 +7,7 @@
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
             <label for="namaLengkap">Nama Lengkap</label>
-            <input type="text" name="nama" class="form-control" readonly placeholder="<?= $this->session->userdata('ses_nama')?>">
+            <input type="text" name="nama" class="form-control" readonly value="<?= $this->session->userdata('ses_nama')?>">
         </div>
         <div class="form-group col-md-3">
         <label for="jenisKelamin">Jenis Kelamin</label>
@@ -24,7 +24,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
-        <input type="email" name="email" class="form-control" id="inputEmail4" readonly placeholder="<?= $this->session->userdata('ses_email')?>">
+        <input type="email" name="email" class="form-control" id="inputEmail4" readonly value="<?= $this->session->userdata('ses_email')?>">
         </div>
         <div class="form-group col-md-6">
         <label for="inputPassword4">Password</label>
@@ -34,7 +34,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
         <label for="inputHp">Nomor HP</label>
-        <input type="text" name="nomor_hp" class="form-control" id="inputHP">
+        <input type="text" name="nomor_hp" class="form-control" id="inputHP" value="<?= $this->session->userdata('ses_nomor_hp')?>">
         </div>
         <div class="form-group col-md-3">
         <label for="inputState">Usia</label>
