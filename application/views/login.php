@@ -18,10 +18,10 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 user-login-box">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Email" id="usr" name="email">
+                                <input type="text" class="form-control" placeholder="Email" id="usr" name="email" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password" id="usr" name="password">
+                                <input type="password" class="form-control" placeholder="Password" id="usr" name="password" required>
                             </div>
                             <button class="btn btn-success" type="submit">Login</button>
                             <!-- <a href="#" class="btn btn-success">Login</a> -->

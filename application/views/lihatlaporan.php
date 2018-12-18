@@ -28,37 +28,26 @@
               </tr>
           </thead> 
               <tr>
-                <td>1</td>
-                <td>Jalaksana</td>
-                <td>Sauqi</td>
-                <td>08/12/19</td>
-                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#detailModal">
-                Detail
+              <?php foreach ($laporan as $l) { ?>
+              <tr>
+                <td><?= $l['id_laporan'];?></td>
+                <td><?= $l['nama_desa']; ?></td>
+                <td><?= $l['nama_fasilitator']; ?></td>
+                <td><?= $l['tanggal_laporan']; ?></td>
+                <td>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" href="<?php echo base_url('index.php/controller/calonfasilitator'.$l['id_laporan']) ?>" data-toggle="modal" data-target="#exampleModal">
+                  Detail
                 </button>
-                  <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kategoriModal">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#kategoriModal">
                     Kategorikan
-                  </button>
+                </button>
+                </td>
+              </tr>  
                 </td>
               </tr>
-              <tr>
-                <td>2</td>
-                <td>Sleman</td>
-                <td>Habib</td>
-                <td>085436278799</td>
-                <td><a class="btn btn-success" href="#">Detail</a>
-                <a class="btn btn-primary" href="#">Kategorikan</a>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Turi</td>
-                <td>Fakru</td>
-                <td>085436278799</td>
-                <td><a class="btn btn-success" href="#">Detail</a>
-                <a class="btn btn-primary" href="#">Kategorikan</a>
-                </td>
-              </tr> 
+              <?php } ?>
             </table>  
           </div>  
 

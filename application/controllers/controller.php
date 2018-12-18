@@ -72,16 +72,27 @@ class controller extends CI_Controller {
 	// Fungsi controller identitas laporan
 	function identitas_laporan() {
 		$data['nama_fasilitator'] = $this->input->post('nama_fasilitator');
-		$data['nama_desa']   =    $this->input->post('nama_desa');
-        $data['kecamatan'] =    $this->input->post('kecamatan');
-        $data['kabupaten'] =    $this->input->post('kabupaten');
-        $data['provinsi']  =    $this->input->post('provinsi');
-        $data['jumlah_ya'] =    $this->input->post('jumlah_ya');
-        $data['jumlah_tidak'] =    ($this->input->post('jumlah_tidak'));
- 
+		$data['nama_desa']   =    $this->input->post('nama_destana');
+        $data['ya1'] =    $this->input->post('jawaban1');
+        $data['tidak1'] =    ($this->input->post('jawaban1'));
+		$data['ya2'] =    $this->input->post('jawaban2');
+        $data['tidak2'] =    ($this->input->post('jawaban2'));
+		$data['ya3'] =    $this->input->post('jawaban3');
+        $data['tidak3'] =    ($this->input->post('jawaban3'));
+		$data['ya4'] =    $this->input->post('jawaban4');
+        $data['tidak4'] =    ($this->input->post('jawaban4'));
+		$data['ya5'] =    $this->input->post('jawaban5');
+        $data['tidak5'] =    ($this->input->post('jawaban5'));
+		$data['ya6'] =    $this->input->post('jawaban6');
+        $data['tidak6'] =    ($this->input->post('jawaban6'));
+		$data['ya7'] =    $this->input->post('jawaban7');
+		$data['tidak7'] =    ($this->input->post('jawaban7'));
+		$data['tanggal_laporan'] = date('d F Y');
+		$data['jumlah_ya'] = $data['ya1'] + $data['ya2'] + $data['ya3'] + $data['ya4'] + $data['ya5'] + $data['ya6'] + $data['ya7'];
+		$data['jumlah_tidak'] = $data['tidak1'] + $data['tidak2'] + $data['tidak3'] + $data['tidak4'] + $data['tidak5'] + $data['tidak6'] + $data['tidak7']; 
 		$this->M_model->tambah_dataLaporan($data);
 	
-		redirect('controller/indikator');
+		redirect('controller/laporan');
 	}
 
 	// Menampilkan Data Desa
@@ -115,7 +126,7 @@ class controller extends CI_Controller {
 		$this->form_validation->set_rules('nama', 'NAMA','required');
         $this->form_validation->set_rules('jenis_kelamin', 'JENIS_KELAMIN','required');
 		$this->form_validation->set_rules('usia', 'usia','required');
-		$this->form_validation->set_rules('foto', 'foto','required');
+		// $this->form_validation->set_rules('foto', 'foto','required');
         $this->form_validation->set_rules('email','EMAIL','required|valid_email');
      	$this->form_validation->set_rules('nomor_hp','NOMOR_HP','required');
         $this->form_validation->set_rules('password','PASSWORD','required');
@@ -130,7 +141,7 @@ class controller extends CI_Controller {
 			$data['nama']   =    $this->input->post('nama');
             $data['jenis_kelamin'] =    $this->input->post('jenis_kelamin');
 			$data['usia'] =    $this->input->post('usia');
-			$data['foto'] =    $this->input->post('foto');
+			// $data['foto'] =    $this->input->post('foto');
             $data['email']  =    $this->input->post('email');
             $data['nomor_hp'] =    $this->input->post('nomor_hp');
             $data['password'] =    md5($this->input->post('password'));
@@ -151,6 +162,11 @@ class controller extends CI_Controller {
 	public function select_nama_desa() {
 		$des = $this->M_model->get_data_destana();
 		$this->load->view('buatlaporan',array('des' => $des));
+	}
+
+	public function ambil_nama_desa() {
+		$data['m_data_destana']=$this->M_model->get_destana();
+		$this->load->view('buatlaporan',$data);
 	}
 	
 	public function peta() {
@@ -177,7 +193,14 @@ class controller extends CI_Controller {
 
 	public function calonfasilitator(){
 		$cfs = $this->M_model->GetCalon();
-		$this->load->view('calonfasilitator', array('cfs' => $cfs));
+		$id=$this->uri->segment(3);
+		$dc = $this->M_model->detailcalon($id);
+		$this->load->view('calonfasilitator', array('cfs' => $cfs, 'dc' => $dc));
+	}
+
+	public function daftarLaporan() {
+		$laporan = $this->M_model->GetLaporan();
+		$this->load->view('lihatlaporan',array('laporan' => $laporan));
 	}
 
 	public function lihatlaporan(){$this->load->view('lihatlaporan');}

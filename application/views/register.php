@@ -18,7 +18,7 @@
         </div>
         <div class="form-group col-md-3">
             <label for="foto">Foto</label>
-            <input class="mt-1" type="file" name="foto" id="foto" required>
+            <input class="mt-1" type="file" name="foto" id="foto">
         </div>
     </div>
     <div class="form-row">

@@ -23,7 +23,6 @@
               <tr>
                 <th>Nama Fasilitator</th>  
                 <th>Nama Desa</th> 
-                <th>Kecamatan</th>                                                                
                 <th>Tanggal</th>
                 <th>Aksi</th>
               </tr>
@@ -32,8 +31,7 @@
               <tr>
                 <td><?= $l['nama_fasilitator']; ?></td>
                 <td><?= $l['nama_desa']; ?></td>
-                <td><?= $l['kecamatan']; ?></td>
-                <td><?= $l['tanggal']; ?></td>
+                <td><?= $l['tanggal_laporan']; ?></td>
                 <td><a class="btn btn-primary " href="#">Detail</a>
                     <a class="btn btn-success ml-1" href="#">Ubah</a>
                     <a class="btn btn-danger ml-1" href="#">Delete</a>
@@ -57,7 +55,7 @@
             </div>
           
           <div class="col-md-6 text-right">
-            <a class="btn btn-primary" href="<?= base_url()."controller/buatlaporan";?>">Buat Laporan</a>
+            <a class="btn btn-primary" href="<?= base_url()."c_get_data_desa";?>">Buat Laporan</a>
             </div>
           </div>
 
