@@ -121,7 +121,7 @@ class M_model extends CI_Model{
 
     // Menampilkan Calon Fasilitator
     public function GetCalon($where=""){
-        $cfs = $this->db->query('SELECT * FROM m_users WHERE status="nonaktif"'.$where);
+        $cfs = $this->db->query('SELECT * FROM m_users WHERE status="nonaktif"');
         return $cfs->result_array();
     }
 

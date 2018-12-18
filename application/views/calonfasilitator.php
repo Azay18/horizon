@@ -35,16 +35,14 @@
                 <td><?= $c['email']; ?></td>
                 <td>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success" href="<?php echo base_url().'controller/detailcalon/'.$c['id_user']; ?>" data-toggle="modal" data-target="#formModal">
-                  Detail
-                </button>
+                <a class="btn btn-success" href="<?php echo base_url().'controller/detailcalon/'.$c['id_user']; ?>">Detail</a>
                 <a class="btn btn-primary" href="<?php echo base_url('controller/terimaFasilitator/'.$c['id_user']); ?>">Terima</a>
                 <a class="btn btn-danger" href="<?php echo base_url('controller/tolakFasilitator/'.$c['id_user']); ?>" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?')">Tolak</a>
                 </td>
               </tr>
           <?php } ?>
             </table>  
-          </div>  
+          </div>
 
           <nav aria-label="Page navigation example">
             <ul class="pagination col-auto">
@@ -55,6 +53,7 @@
               <li class="page-item"><a class="page-link" href="#">Next</a></li>
             </ul>
           </nav>
+          
     </div>   
 
     <!-- Modal -->
