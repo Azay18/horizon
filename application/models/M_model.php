@@ -58,6 +58,20 @@ class M_model extends CI_Model{
         $this->db->insert('m_laporan',$data);
     }
 
+    public function kategoriP($id){
+        $data = "Pratama";
+        $this->db->set('jenis_destana',$data);
+        $this->db->where('id_user', $id);
+        $this->db->update('m_users');
+    }
+
+    public function kategoriM($id){
+        $data = "Madya";
+        $this->db->set('jenis_destana',$data);
+        $this->db->where('id_user', $id);
+        $this->db->update('m_users');
+    }
+
     public function kategori() {
         $ya1=$this->db->query('SELECT ya1 FROM m_laporan');
         $ya2=$this->db->query('SELECT ya2 FROM m_laporan');
@@ -84,19 +98,19 @@ class M_model extends CI_Model{
     public function kategorikan($id) {
         $jumlah_ya= $this->db->query('SELECT jumlah_ya FROM m_laporan');
         $kategori = 'hiya';
-        // if($jumlah_ya == '0'){
-        //     $kategori = 'Bukan Desa Tangguh Bencana';
-        // } else if($jumlah_ya >= '0' && $jumlah_ya <= '3'){
-        //     $kategori='Pratama';
-        // } else if($jumlah_ya >= '3' && $jumlah_ya <= '5'){
-        //     $kategori='Madya';
-        // } else {
-        //     $kategori='Utama' ;
-        // }
-        // // $this->db->insert('m_data_destana','jenis_destana','100');
+        if($jumlah_ya == '0'){
+            $kategori = 'Bukan Desa Tangguh Bencana';
+        } else if($jumlah_ya >= '0' && $jumlah_ya <= '3'){
+            $kategori='Pratama';
+        } else if($jumlah_ya >= '3' && $jumlah_ya <= '5'){
+            $kategori='Madya';
+        } else {
+            $kategori='Utama' ;
+        }
+        // $this->db->insert('m_data_destana','jenis_destana','100');
         $this->db->set('jenis_destana',$kategori);
-        $this->db->where('id_laporan', $id);
-        $this->db->update('m_laporan');
+        $this->db->where('id_destana', $id);
+        $this->db->update('m_data_destana');
     }
     
     public function get_data_destana() {
