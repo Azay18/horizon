@@ -98,7 +98,7 @@
           </div>
           <div class="modal-body">
             Desa ini dikategorikan sebagai Desa Utama<br>
-          <button type="button" class="btn btn-success mt-3">Terima</button>
+          <button type="button" class="btn btn-success mt-3" >Terima</button>
           <button type="button" class="btn btn-danger mt-3"  onclick="return confirm('Anda Yakin Ingin Menolak Laporan Ini?')">Tolak</button>
           </div>
           <div class="modal-footer">

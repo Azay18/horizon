@@ -7,7 +7,7 @@
     <div class="form-row mt-3">
         <div class="form-group col-md-6">
             <label for="namaLengkap">Nama Lengkap</label>
-            <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap">
+            <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
         </div>
         <div class="form-group col-md-3">
         <label for="jenisKelamin">Jenis Kelamin</label>
@@ -24,21 +24,21 @@
     <div class="form-row">
         <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
-        <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
+        <input required type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
         </div>
         <div class="form-group col-md-6">
         <label for="inputPassword4">Password</label>
-        <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <input required type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
         <label for="inputHp">Nomor HP</label>
-        <input type="text" name="nomor_hp" class="form-control" id="inputHP">
+        <input required type="text" name="nomor_hp" class="form-control" id="inputHP">
         </div>
         <div class="form-group col-md-3">
         <label for="inputState">Usia</label>
-        <input type="number" name="usia" class="form-control" id="inputHP">
+        <input required type="number" name="usia" class="form-control" id="inputHP">
         </div>
         <div class="form-group col-md-3">
         <label for="pendidikan">Jejang Pendidikan</label>
@@ -55,16 +55,16 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="inputAddress">Alamat</label>
-            <input type="text" name="alamat" class="form-control" id="inputAddress" placeholder="Alamat">
+            <input required type="text" name="alamat" class="form-control" id="inputAddress" placeholder="Alamat">
         </div>
             <div class="form-group col-md-2">
             <label for="inputKode">Kode Pos</label>
-            <input type="text" name="kode_pos" class="form-control" id="inputKode">
+            <input required type="text" name="kode_pos" class="form-control" id="inputKode">
             </div>
     </div>
     <div class="form-group">
     <label for="alasan">Alasan Bergabung</label>
-    <textarea class="form-control" name="alasan" rows="5" id="alasan"></textarea>
+    <textarea required class="form-control" name="alasan" rows="5" id="alasan"></textarea>
     </div>
     <button type="submit" class="btn btn-success">Daftar</button>
     </form>

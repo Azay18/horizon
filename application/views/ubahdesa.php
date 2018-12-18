@@ -2,40 +2,40 @@
 <?php require 'f_header.php'; ?>
 
     <!-- form register -->
-    <form class="container" style="padding-top:50px">
+    <form method="POST" action="" class="container" style="padding-top:50px">
     <h4 class="mt-4 text-center">UBAH DATA INDUK DESA</h4><hr>
     <div class="form-row mt-3">
         <div class="col">
         <label for="namaDesa">Nama Desa</label>
-        <input type="text" class="form-control" placeholder="Nama Desa">
+        <input type="text" class="form-control" placeholder="Nama Desa" value="">
         </div>
     </div>
     <div class="form-group mt-3">
         <label for="inputAlamat">Alamat</label>
-        <input type="text" class="form-control" id="inputAlamat" placeholder="Alamat Desa">
+        <input type="text" class="form-control" id="inputAlamat" placeholder="Alamat Desa" value="">
     </div>
     <div class="form-row mt-3">
         <div class="form-group col-md-4">
         <label for="kecamatan">Kecamatan</label>
-        <input type="text" class="form-control" id="kecamatan" placeholder="Kecamatan">
+        <input type="text" class="form-control" id="kecamatan" placeholder="Kecamatan" value="">
         </div>
         <div class="form-group col-md-4">
         <label for="kabupaten">Kabupaten</label>
-        <input type="text" class="form-control" id="kabupaten" placeholder="Kabupaten">
+        <input type="text" class="form-control" id="kabupaten" placeholder="Kabupaten" value="">
         </div>
         <div class="form-group col-md-4">
         <label for="provinsi">Provinsi</label>
-        <input type="text" class="form-control" id="provinsi" placeholder="Provinsi">
+        <input type="text" class="form-control" id="provinsi" placeholder="Provinsi" value="">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-        <label for="inputWarga">Jumlah Warga</label>
-        <input type="text" class="form-control" id="inputWarga">
+        <label for="inputWarga">Jumlah Penduduk</label>
+        <input type="text" class="form-control" id="inputWarga" value="">
         </div>
         <div class="form-group col-md-2">
         <label for="inputKode">Kode Pos</label>
-        <input type="text" class="form-control" id="inputKode">
+        <input type="text" class="form-control" id="inputKode" value="">
         </div>
     </div>
     </div>

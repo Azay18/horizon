@@ -30,11 +30,19 @@ class controller extends CI_Controller {
                 $this->session->set_userdata('peran','bnpb');
                 $this->session->set_userdata('ses_email',$data['email']);
                 $this->session->set_userdata('ses_nama',$data['nama']);
-                redirect('controller/bnpb');
+				$this->session->set_userdata('ses_noHp',$data['nomor_hp']);
+				$this->session->set_userdata('ses_password',md5($data['password']));
+				$this->session->set_userdata('ses_alamat',$data['alamat']);
+				$this->session->set_userdata('ses_kodePos',$data['kode_pos']);
+				redirect('controller/bnpb');
              }else if ($data['peran']=='fasilitator' && $data['status']=='aktif') { 
                 $this->session->set_userdata('peran','fasilitator');
                 $this->session->set_userdata('ses_email',$data['email']);
-                $this->session->set_userdata('ses_nama',$data['nama']);
+				$this->session->set_userdata('ses_nama',$data['nama']);
+				$this->session->set_userdata('ses_noHp',$data['nomor_hp']);
+				$this->session->set_userdata('ses_password',md5($data['password']));
+				$this->session->set_userdata('ses_alamat',$data['alamat']);
+				$this->session->set_userdata('ses_kodePos',$data['kode_pos']);
                 redirect('controller/fasilitator');
              } else {
                 $this->load->view('home');
@@ -198,12 +206,15 @@ class controller extends CI_Controller {
 		$this->load->view('calonfasilitator', array('cfs' => $cfs, 'dc' => $dc));
 	}
 
-	public function daftarLaporan() {
+	// public function daftarLaporan() {	
+	// 	$this->load->view('lihatlaporan',array('laporan' => $laporan));
+	// }
+
+	public function lihatlaporan() {
 		$laporan = $this->M_model->GetLaporan();
 		$this->load->view('lihatlaporan',array('laporan' => $laporan));
+		
 	}
-
-	public function lihatlaporan(){$this->load->view('lihatlaporan');}
 
 	public function ubahdesa(){$this->load->view('ubahdesa');}
 

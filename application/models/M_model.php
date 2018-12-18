@@ -81,19 +81,22 @@ class M_model extends CI_Model{
         $this->db->insert('m_laporan.tanggal_laporan',$tanggal_laporan);
     }
 
-    public function kategorikan() {
-        $jumlah_ya= $this->db->query('SELECT m_data_destana(jumlah_ya)');
-        $kategori="hiya";
+    public function kategorikan($id) {
+        $jumlah_ya= $this->db->query('SELECT jumlah_ya FROM m_laporan');
+        $kategori='hiya';
         if($jumlah_ya=0){
-            $kategori="Bukan Desa Tangguh Bencana";
+            $kategori='Bukan Desa Tangguh Bencana';
         } else if($jumlah_ya>0 && $jumlah_ya<3){
-            $kategori="Pratama";
+            $kategori='Pratama';
         } else if($jumlah_ya>3 && $jumlah_ya<=5){
-            $kategori="Madya";
+            $kategori='Madya';
         } else {
-            $kategori="Utama";
+            $kategori='Utama';
         }
-        $this->db->insert('m_data_destana.jenis_destana',$kategori);
+        // $this->db->insert('m_data_destana.jenis_destana',$kategori);
+        $this->db->set('jenis_destana',$kategori);
+        $this->db->where('id_destana', $id);
+        $this->db->update('m_data_destana');
     }
     
     public function get_data_destana() {
@@ -123,8 +126,8 @@ class M_model extends CI_Model{
     }
 
     public function GetLaporan(){
-        $lpr = $this->db->query('SELECT * FROM m_laporan');
-        return $lpr->result_array();
+        $laporan = $this->db->query('SELECT * FROM m_laporan');
+        return $laporan->result_array();
     }
 
     public function detailCalon($id) {
@@ -142,6 +145,11 @@ class M_model extends CI_Model{
     //     return $laporan->result_array();
     // }
     
+    public function HapusLaporan($tableId, $where)
+	{
+		$lap = $this->db->delete($tableId, $where);
+		return $lap;
+	}
   }
 
 

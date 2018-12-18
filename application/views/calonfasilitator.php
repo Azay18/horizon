@@ -58,15 +58,16 @@
     </div>   
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Data Calon Fasilitator</h5>
+            <h5 class="modal-title" id="formModalLabel">Data Calon Fasilitator</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+<<<<<<< HEAD
           <div class="modal-body">
             <label for="">Nama : <?= $c['nama']; ?></label><br>
             <label for="">Email : <?= $c['email']; ?></label><br>
@@ -75,6 +76,16 @@
             <label for="">Jenjang Pendidikan : <?= $c['jenjang_pendidikan']; ?></label><br>
             <label for="">Alamat : <?= $c['alamat']; ?></label><br>
             <label for="">Alasan : <?= $c['alasan']; ?></label><br>
+=======
+          <div class="modal-body" method="post">
+            <label for="">Nama : <?= $c['nama'];?></label><br>
+            <label for="">Email : ramdani@gmail.com</label><br>
+            <label for="">Nomor HP : 087666554456</label><br>
+            <label for="">Usia : 19</label><br>
+            <label for="">Jenjang Pendidikan : SMA</label><br>
+            <label for="">Alamat : Jl. Mawar No. 3 RT 4/RW 5 Tirto, Sleman, Yogyakarta</label><br>
+            <label for="">Alasan : Biar ada kerjaan</label><br>
+>>>>>>> 17cbee75440bf30f3fe92bae11a6158d3abce03f
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
