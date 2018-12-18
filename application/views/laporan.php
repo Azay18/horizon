@@ -32,9 +32,9 @@
                 <td><?= $l['nama_fasilitator']; ?></td>
                 <td><?= $l['nama_desa']; ?></td>
                 <td><?= $l['tanggal_laporan']; ?></td>
-                <td><a class="btn btn-primary " href="#">Detail</a>
+                <td>
                     <a class="btn btn-success ml-1" href="<?= base_url()."controller/ubahlaporan"?>">Ubah</a>
-                    <a class="btn btn-danger ml-1" href="<?= base_url()."controller/hapus_laporan/".$l['id_laporan'];?>" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?')">Hapus</a>
+                    <a class="btn btn-danger ml-1" href="<?= base_url()."controller/hapus/".$l['id_laporan'];?>" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?')">Hapus</a>
                 </td>
               </tr>
           <?php } ?>

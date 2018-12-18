@@ -114,25 +114,20 @@ class M_model extends CI_Model{
     }
 
     // Menampilkan Data Desa
-    public function GetDesa(){
-        $desa = $this->db->query('SELECT * FROM m_data_destana');
+    public function GetDesa($where=""){
+        $desa = $this->db->query('SELECT * FROM m_data_destana'.$where);
         return $desa->result_array();
     }
 
     // Menampilkan Calon Fasilitator
-    public function GetCalon(){
-        $cfs = $this->db->query('SELECT * FROM m_users WHERE status="nonaktif"');
+    public function GetCalon($where=""){
+        $cfs = $this->db->query('SELECT * FROM m_users WHERE status="nonaktif"'.$where);
         return $cfs->result_array();
     }
 
     public function GetLaporan(){
         $laporan = $this->db->query('SELECT * FROM m_laporan');
         return $laporan->result_array();
-    }
-
-    public function detailCalon($id) {
-        $dc = $this->db->query("SELECT * FROM m_users WHERE id_user='$id'");
-        return $dc->result_array();
     }
 
     public function GetProfil(){
@@ -145,10 +140,14 @@ class M_model extends CI_Model{
     //     return $laporan->result_array();
     // }
     
-    public function HapusLaporan($tableId, $where)
-	{
+    public function DeleteData($tableId, $where){
 		$lap = $this->db->delete($tableId, $where);
 		return $lap;
+	}
+    
+    public function UpdateData($tableId, $data, $where){
+		$res = $this->db->update($tableId, $data, $where);
+		return $res;
 	}
   }
 

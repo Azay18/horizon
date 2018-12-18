@@ -35,11 +35,11 @@
                 <td><?= $c['email']; ?></td>
                 <td>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success" href="<?php echo base_url('index.php/controller/calonfasilitator'.$c['id_user']) ?>" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-success" href="<?php echo base_url().'controller/detailcalon/'.$c['id_user']; ?>" data-toggle="modal" data-target="#formModal">
                   Detail
                 </button>
-                <a class="btn btn-primary" href="<?php echo base_url('index.php/controller/terimaFasilitator/'.$c['id_user']); ?>">Terima</a>
-                <a class="btn btn-danger" href="<?php echo base_url('index.php/controller/tolakFasilitator/'.$c['id_user']); ?>">Tolak</a>
+                <a class="btn btn-primary" href="<?php echo base_url('controller/terimaFasilitator/'.$c['id_user']); ?>">Terima</a>
+                <a class="btn btn-danger" href="<?php echo base_url('controller/tolakFasilitator/'.$c['id_user']); ?>" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?')">Tolak</a>
                 </td>
               </tr>
           <?php } ?>
@@ -67,26 +67,14 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-<<<<<<< HEAD
           <div class="modal-body">
             <label for="">Nama : <?= $c['nama']; ?></label><br>
             <label for="">Email : <?= $c['email']; ?></label><br>
             <label for="">Nomor HP : <?= $c['nomor_hp']; ?></label><br>
             <label for="">Usia : <?= $c['usia']; ?></label><br>
-            <label for="">Jenjang Pendidikan : <?= $c['jenjang_pendidikan']; ?></label><br>
+            <!-- <label for="">Jenjang Pendidikan : <?= $c['jenjang_pendidikan']; ?></label><br>
             <label for="">Alamat : <?= $c['alamat']; ?></label><br>
-            <label for="">Alasan : <?= $c['alasan']; ?></label><br>
-=======
-          <div class="modal-body" method="post">
-            <label for="">Nama : <?= $c['nama'];?></label><br>
-            <label for="">Email : ramdani@gmail.com</label><br>
-            <label for="">Nomor HP : 087666554456</label><br>
-            <label for="">Usia : 19</label><br>
-            <label for="">Jenjang Pendidikan : SMA</label><br>
-            <label for="">Alamat : Jl. Mawar No. 3 RT 4/RW 5 Tirto, Sleman, Yogyakarta</label><br>
-            <label for="">Alasan : Biar ada kerjaan</label><br>
->>>>>>> 17cbee75440bf30f3fe92bae11a6158d3abce03f
-          </div>
+            <label for="">Alasan : <?= $c['alasan']; ?></label><br> -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>

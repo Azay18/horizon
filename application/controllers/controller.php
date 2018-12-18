@@ -202,13 +202,26 @@ class controller extends CI_Controller {
 	public function calonfasilitator(){
 		$cfs = $this->M_model->GetCalon();
 		$id=$this->uri->segment(3);
-		$dc = $this->M_model->detailcalon($id);
-		$this->load->view('calonfasilitator', array('cfs' => $cfs, 'dc' => $dc));
+		$this->load->view('calonfasilitator', array('cfs' => $cfs));
 	}
 
-	// public function daftarLaporan() {	
-	// 	$this->load->view('lihatlaporan',array('laporan' => $laporan));
-	// }
+	public function detailcalon($id_user){
+		$cfs = $this->M_model->GetCalon(" where id_user = '$id_user'");
+			$data = array(
+				"nama" => $user[0]['nama'],
+				"email" => $user[0]['email'],
+				"nomor_hp" => $user[0]['nomor_hp'],
+				"usia" => $user[0]['usia']
+				// "provinsi" => $user[0]['provinsi'],
+				// "alamat" => $user[0]['alamat'],
+				// "kode_pos" => $user[0]['kode_pos']
+			);
+			$this->load->view('calonfasilitator', $data);
+	}
+
+	public function daftarLaporan() {	
+		$this->load->view('lihatlaporan',array('laporan' => $laporan));
+	}
 
 	public function lihatlaporan() {
 		$laporan = $this->M_model->GetLaporan();
@@ -236,6 +249,8 @@ class controller extends CI_Controller {
 
 	public function berita6(){$this->load->view('berita6');}
 
+	public function ubahlaporan(){$this->load->view('ubahlaporan');}
+
 	public function kategorikan(){
 		$this->load->view('kategorikan');
 	}
@@ -253,86 +268,64 @@ class controller extends CI_Controller {
 		redirect('controller/calonfasilitator');
 		// $this->load->view('calonfasilitator');
 	}
-	// public function add_data()
-	// {
-	// 	$dep = $this->sdm_model->GetDept();
-	// 	$this->load->view('form_add',array('dep' => $dep));
-	// }
 
-	// public function do_insert()
-	// {
-	// 	$nama_depan = $_POST['nama_depan'];
-	// 	$nama_belakang = $_POST['nama_belakang'];
-	// 	$tanggal_lahir = $_POST['tanggal_lahir'];
-	// 	$jenis_kelamin = $_POST['jenis_kelamin'];
-	// 	// $alamat = $_POST['alamat'];
-	// 	// $gaji = $_POST['gaji'];
-	// 	// $supervisor = $_POST['supervisor'];
-	// 	$departemen = $_POST['departemen'];
-	// 	$data_insert = array(
-	// 		'nama_depan' => $nama_depan,
-	// 		'nama_belakang' => $nama_belakang,
-	// 		'tanggal_lahir' => $tanggal_lahir,
-	// 		'jenis_kelamin' => $jenis_kelamin,
-	// 		// 'alamat' => $alamat,
-	// 		// 'gaji' => $gaji,
-	// 		// 'supervisor' => $supervisor,
-	// 		'departemen' => $departemen
-	// 	);
-	// 	$res = $this->sdm_model->InsertData('pegawai',$data_insert);
-	// 	if ($res>=1) {
-	// 		redirect('sdm_controller/index');
-	// 	}else {
-	// 		echo "Gagal";
-	// 	}
-	//   }
+		public function edit_data($id_destana){
+			$destana = $this->M_model->GetDesa(" where id_destana = '$id_destana'");
+			$data = array(
+				"nama_destana" => $destana[0]['nama_destana'],
+				"jumlah_penduduk" => $destana[0]['jumlah_penduduk'],
+				"kecamatan" => $destana[0]['kecamatan'],
+				"kabupaten" => $destana[0]['kabupaten'],
+				"provinsi" => $destana[0]['provinsi'],
+				"alamat" => $destana[0]['alamat'],
+				"kode_pos" => $destana[0]['kode_pos']
+			);
+			$this->load->view('ubahdesa', $data);
+		}
 
-	// 	public function edit_data($id_pegawai){
-	// 		$pegawai = $this->sdm_model->GetPegawai(" where id_pegawai = '$id_pegawai'");
-	// 		$data = array(
-	// 			"nama_depan" => $pegawai[0]['nama_depan'],
-	// 			"nama_belakang" => $pegawai[0]['nama_belakang'],
-	// 			"tanggal_lahir" => $pegawai[0]['tanggal_lahir'],
-	// 			"jenis_kelamin" => $pegawai[0]['jenis_kelamin'],
-	// 			"alamat" => $pegawai[0]['alamat'],
-	// 			"gaji" => $pegawai[0]['gaji'],
-	// 			"supervisor" => $pegawai[0]['supervisor'],
-	// 			"departemen" => $pegawai[0]['departemen']
-	// 		);
-	// 		$this->load->view('form_edit', $data);
-	// 	}
+		public function do_update(){
+			$nama_destana = $_POST['nama_destana'];
+			$jumlah_penduduk = $_POST['jumlah_penduduk'];
+			$kecamatan = $_POST['kecamatan'];
+			$kabupaten = $_POST['kabupaten'];
+			$provinsi = $_POST['provinsi'];
+			$alamat = $_POST['alamat'];
+			$kode_pos = $_POST['kode_pos'];
+			$data_update = array(
+				'nama_destana' => $nama_destana,
+				'jumlah_penduduk' => $jumlah_penduduk,
+				'kecamatan' => $kecamatan,
+				'kabupaten' => $kabupaten,
+				'provinsi' => $provinsi,
+				'alamat' => $alamat,
+				'kode_pos' => $kode_pos
+			);
+			$where = array('jenis_destana' => $jenis_destana);
+			$res = $this->M_model->UpdateData('m_data_destana',$data_update,$where);
+			if ($res>=1) {
+				redirect('controller/desa');
+			}
+		}
 
-	// 	public function do_update(){
-	// 		$nama_depan = $_POST['nama_depan'];
-	// 		$nama_belakang = $_POST['nama_belakang'];
-	// 		$tanggal_lahir = $_POST['tanggal_lahir'];
-	// 		$jenis_kelamin = $_POST['jenis_kelamin'];
-	// 		$alamat = $_POST['alamat'];
-	// 		$gaji = $_POST['gaji'];
-	// 		$supervisor = $_POST['supervisor'];
-	// 		$departemen = $_POST['departemen'];
-	// 		$data_update = array(
-	// 			'nama_depan' => $nama_depan,
-	// 			'nama_belakang' => $nama_belakang,
-	// 			'tanggal_lahir' => $tanggal_lahir,
-	// 			'jenis_kelamin' => $jenis_kelamin,
-	// 			'alamat' => $alamat,
-	// 			'gaji' => $gaji,
-	// 			'supervisor' => $supervisor,
-	// 			'departemen' => $departemen
-	// 		);
-	// 		$where = array('nama_belakang' => $nama_belakang);
-	// 		$res = $this->sdm_model->UpdateData('pegawai',$data_update,$where);
-	// 		if ($res>=1) {
-	// 			redirect('sdm_controller/index');
-	// 		}
-	// 	}
+		public function hapus($id_laporan){
+			$where = array('id_laporan' => $id_laporan);
+			$lap = $this->M_model->DeleteData('m_laporan', $where);
+			if ($lap>=1) {
+				redirect('controller/laporan');
+			}
+		}
 
-	// 	public function do_delete($id_pegawai){
-	// 		$where = array('id_pegawai' => $id_pegawai);
-	// 		$res = $this->sdm_model->DeleteData('pegawai', $where);
-	// 		if ($res>=1) {
-	// 			redirect('sdm_controller/index');
-	// 		}
-	// 	}
+		public function hapusdesa($id_destana){
+			$where = array('id_destana' => $id_destana);
+			$lap = $this->M_model->DeleteData('m_data_destana', $where);
+			if ($lap>=1) {
+				redirect('controller/desa');
+			}
+		}
+
+		// public function hapusDesa(){
+		// 	$id = $this->uri->segment(3);
+		// 	$proses = $this->M_model->hapus_desa($id);
+		// 	redirect('controller/calonfasilitator');
+		// 	}
 }
