@@ -303,6 +303,35 @@ class controller extends CI_Controller {
 
 	public function ubahlaporan(){$this->load->view('ubahlaporan');}
 
+	public function tampilLaporan(){
+		$data = $this->M_model->GetLaporan();
+		$this->load->view('kategorikan', array('data'=>$data));
+	}
+
+	public function kategorikanlahP(){
+		$id = $this->uri->segment(3);
+		$this->M_model->kategoriP($id);
+		redirect('controller/lihatlaporan');
+	}
+
+	public function kategorikanlahM(){
+		$id = $this->uri->segment(3);
+		$this->M_model->kategoriM($id);
+		redirect('controller/lihatlaporan');
+	}
+
+	public function kategorikanlahU(){
+		$id = $this->uri->segment(3);
+		$this->M_model->kategoriU($id);
+		redirect('controller/lihatlaporan');
+	}
+
+	public function kategorikanlahB(){
+		$id = $this->uri->segment(3);
+		$this->M_model->kategoriB($id);
+		redirect('controller/lihatlaporan');
+	}
+
 	public function terimaFasilitator() {
 		$id=$this->uri->segment(3);
 		$this->M_model->terima_fasilitator($id);

@@ -61,15 +61,29 @@ class M_model extends CI_Model{
     public function kategoriP($id){
         $data = "Pratama";
         $this->db->set('jenis_destana',$data);
-        $this->db->where('id_user', $id);
-        $this->db->update('m_users');
+        $this->db->where('id_laporan', $id);
+        $this->db->update('m_laporan');
     }
 
     public function kategoriM($id){
         $data = "Madya";
         $this->db->set('jenis_destana',$data);
-        $this->db->where('id_user', $id);
-        $this->db->update('m_users');
+        $this->db->where('id_laporan', $id);
+        $this->db->update('m_laporan');
+    }
+
+    public function kategoriU($id){
+        $data = "Utama";
+        $this->db->set('jenis_destana',$data);
+        $this->db->where('id_laporan', $id);
+        $this->db->update('m_laporan');
+    }
+
+    public function kategoriB($id){
+        $data = "Bukan Desa Tangguh Bencana";
+        $this->db->set('jenis_destana',$data);
+        $this->db->where('id_laporan', $id);
+        $this->db->update('m_laporan');
     }
 
     public function kategori() {
@@ -148,7 +162,7 @@ class M_model extends CI_Model{
     }
 
     public function GetLaporan(){
-        $laporan = $this->db->query('SELECT * FROM m_laporan');
+        $laporan = $this->db->query('SELECT * FROM m_laporan WHERE jenis_destana="Belum Dikategorikan"');
         return $laporan->result_array();
     }
 

@@ -2,7 +2,7 @@
 <?php require 'b_header.php'; ?>
 
     <!-- form register -->
-    <form class="container" style="padding-top:50px" method="post" action="<?php echo base_url().'controller/kategori'?>">
+    <form class="container" style="padding-top:50px" method="post" action="<?php echo base_url().'controller/kategorikan'?>">
     <h4 class="mt-4 text-center">IDENTITAS LAPORAN</h4><hr>
     <div class="form-row mt-3">
         <div class="col">
@@ -152,16 +152,16 @@ aset produktif masyarakat?</td>
             </div>
             <div class="form-group mt-3">
             <label for="inputDesa">Kategori Desa</label>
-            <!-- <input type="text" class="form-control" id="inputDesa" placeholder="Nama Desa" name="nama_desa"> -->
-            <select id="inputState" name="jenis_destana" class="form-control">
-              <option value="pratama">Pratama</option>
-              <option value="pratama">Madya</option>
-              <option value="pratama">Utama</option>
-              <option value="pratama">Bukan Desa Tangguh Bencana</option>
-            </select>
+            </br>
+            <?php foreach ($data as $d){?>
+            <!-- <input type="text" class="form-control" id="inputDesa" placeholder="Nama Desa" name="nama_desa"> -->               
+              <a href="<?= base_url()."controller/kategorikanlahP/".$d['id_laporan'];?>" class="btn btn-danger" value="Pratama">Pratama</a>
+              <a href="<?= base_url()."controller/kategorikanlahM/".$d['id_laporan'];?>" class="btn btn-warning" value="Madya">Madya</a>
+              <a href="<?= base_url()."controller/kategorikanlahU/".$d['id_laporan'];?>" class="btn btn-primary" value="Utama">Utama</a>
+              <a href="<?= base_url()."controller/kategorikanlahB/".$d['id_laporan'];?>" class="btn btn-success" value="Bukan Desa Tangguh Bencana">Bukan Desa Tangguh Bencana</a>
+            <?php } ?>
             </div>
             <a href="<?= base_url()."controller/lihatlaporan"?>" class="btn btn-secondary">Kembali</a>
-            <button type="submit" class="btn btn-primary">Kirim</button>
     </div><br>
     </form>
 
