@@ -150,6 +150,16 @@ aset produktif masyarakat?</td>
                     </tr>
                 </table>
             </div>
+            <div class="form-group mt-3">
+            <label for="inputDesa">Kategori Desa</label>
+            <!-- <input type="text" class="form-control" id="inputDesa" placeholder="Nama Desa" name="nama_desa"> -->
+            <select id="inputState" name="jenis_destana" class="form-control">
+              <option value="pratama">Pratama</option>
+              <option value="pratama">Madya</option>
+              <option value="pratama">Utama</option>
+              <option value="pratama">Bukan Desa Tangguh Bencana</option>
+            </select>
+            </div>
             <a href="<?= base_url()."controller/lihatlaporan"?>" class="btn btn-secondary">Kembali</a>
             <button type="submit" class="btn btn-primary">Kirim</button>
     </div><br>
