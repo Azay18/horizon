@@ -2,7 +2,7 @@
 <?php require 'b_header.php'; ?>
 
     <!-- form register -->
-    <form class="container" style="padding-top:50px" method="post" action="<?php echo base_url().'controller/'?>">
+    <form class="container" style="padding-top:50px" method="post" action="<?php echo base_url().'controller/kategori'?>">
     <h4 class="mt-4 text-center">IDENTITAS LAPORAN</h4><hr>
     <div class="form-row mt-3">
         <div class="col">

@@ -95,7 +95,8 @@ class controller extends CI_Controller {
         $data['tidak6'] =    ($this->input->post('jawaban6'));
 		$data['ya7'] =    $this->input->post('jawaban7');
 		$data['tidak7'] =    ($this->input->post('jawaban7'));
-		$data['tanggal_laporan'] = date('d F Y');
+		date_default_timezone_set('Asia/Jakarta');
+		$data['tanggal_laporan'] = date('Y-m-d');
 		$data['jumlah_ya'] = $data['ya1'] + $data['ya2'] + $data['ya3'] + $data['ya4'] + $data['ya5'] + $data['ya6'] + $data['ya7'];
 		$data['jumlah_tidak'] = $data['tidak1'] + $data['tidak2'] + $data['tidak3'] + $data['tidak4'] + $data['tidak5'] + $data['tidak6'] + $data['tidak7']; 
 		$this->M_model->tambah_dataLaporan($data);
@@ -108,6 +109,26 @@ class controller extends CI_Controller {
 		$data = $this->M_model->get_data_laporan($id);
 		$data2 = $this->M_model->cek_jawaban($id);			//Cek jawaban ya / tidak
 		$this->load->view('kategorikan', array('data' =>$data, 'data2'=>$data2));
+	}
+
+	// public function kategori($id_destana){
+	// 	$destana = $this->M_model->GetDesa(" where id_destana = '$id_destana'");
+	// 	$data = array(
+	// 		"nama_destana" => $destana[0]['nama_destana'],
+	// 		"jumlah_penduduk" => $destana[0]['jumlah_penduduk'],
+	// 		"kecamatan" => $destana[0]['kecamatan'],
+	// 		"kabupaten" => $destana[0]['kabupaten'],
+	// 		"provinsi" => $destana[0]['provinsi'],
+	// 		"alamat" => $destana[0]['alamat'],
+	// 		"kode_pos" => $destana[0]['kode_pos']
+	// 	);
+	// 	$this->load->view('ubahdesa', $data);
+	// }
+
+	public function kategori(){
+		$id=$this->uri->segment(3);
+		$this->M_model->kategorikan($id);
+		redirect('controller/lihatlaporan');
 	}
 
 	public function desa(){
