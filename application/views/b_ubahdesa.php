@@ -1,5 +1,5 @@
 <title>Ubah Data Induk Desa</title>
-<?php require 'f_header.php'; ?>
+<?php require 'b_header.php'; ?>
 
     <!-- form register -->
     <form method="POST" action="<?php echo base_url()."controller/bdo_update"; ?>" class="container" style="padding-top:50px">
