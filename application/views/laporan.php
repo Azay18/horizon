@@ -33,8 +33,7 @@
                 <td><?= $l['nama_desa']; ?></td>
                 <td><?= $l['tanggal_laporan']; ?></td>
                 <td>
-                    <a class="btn btn-success ml-1" href="<?= base_url()."controller/ubahlaporan"?>">Ubah</a>
-                    <a class="btn btn-danger ml-1" href="<?= base_url()."controller/hapus/".$l['id_laporan'];?>" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?')">Hapus</a>
+                <a type="button" class="btn btn-primary" href="<?= base_url()."controller/ceklaporan/".$l['id_laporan'];?>">Lihat Laporan</a>
                 </td>
               </tr>
           <?php } ?>

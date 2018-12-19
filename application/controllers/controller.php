@@ -308,6 +308,11 @@ class controller extends CI_Controller {
 		$this->load->view('kategorikan', array('data'=>$data));
 	}
 
+	public function ceklaporan(){
+		$data = $this->M_model->GetLaporan();
+		$this->load->view('ceklaporan', array('data'=>$data));
+	}
+
 	public function kategorikanlahP(){
 		$id = $this->uri->segment(3);
 		$this->M_model->kategoriP($id);
