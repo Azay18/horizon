@@ -60,30 +60,46 @@ class M_model extends CI_Model{
 
     public function kategoriP($id){
         $data = "Pratama";
-        $this->db->set('jenis_destana',$data);
-        $this->db->where('id_laporan', $id);
-        $this->db->update('m_laporan');
+        $this->db->set('a.jenis_destana',$data);
+        $this->db->where('a.nama_desa', $id);
+        $this->db->update('m_laporan as a');
+        
+        $this->db->set('b.jenis_destana',$data);
+        $this->db->where('b.nama_destana', $id);
+        $this->db->update('m_data_destana as b');
     }
 
     public function kategoriM($id){
         $data = "Madya";
-        $this->db->set('jenis_destana',$data);
-        $this->db->where('id_laporan', $id);
-        $this->db->update('m_laporan');
+        $this->db->set('a.jenis_destana',$data);
+        $this->db->where('a.nama_desa', $id);
+        $this->db->update('m_laporan as a');
+
+        $this->db->set('b.jenis_destana',$data);
+        $this->db->where('b.nama_destana', $id);
+        $this->db->update('m_data_destana as b');
     }
 
     public function kategoriU($id){
         $data = "Utama";
-        $this->db->set('jenis_destana',$data);
-        $this->db->where('id_laporan', $id);
-        $this->db->update('m_laporan');
+        $this->db->set('a.jenis_destana',$data);
+        $this->db->where('a.nama_desa', $id);
+        $this->db->update('m_laporan as a');
+
+        $this->db->set('b.jenis_destana',$data);
+        $this->db->where('b.nama_destana', $id);
+        $this->db->update('m_data_destana as b');
     }
 
     public function kategoriB($id){
         $data = "Bukan Desa Tangguh Bencana";
-        $this->db->set('jenis_destana',$data);
-        $this->db->where('id_laporan', $id);
-        $this->db->update('m_laporan');
+        $this->db->set('a.jenis_destana',$data);
+        $this->db->where('a.nama_desa', $id);
+        $this->db->update('m_laporan as a');
+
+        $this->db->set('b.jenis_destana',$data);
+        $this->db->where('b.nama_destana', $id);
+        $this->db->update('m_data_destana as b');
     }
 
     public function kategori() {

@@ -155,10 +155,10 @@ aset produktif masyarakat?</td>
             </br>
             <?php foreach ($data as $d){?>
             <!-- <input type="text" class="form-control" id="inputDesa" placeholder="Nama Desa" name="nama_desa"> -->               
-              <a href="<?= base_url()."controller/kategorikanlahP/".$d['id_laporan'];?>" class="btn btn-danger" value="Pratama">Pratama</a>
-              <a href="<?= base_url()."controller/kategorikanlahM/".$d['id_laporan'];?>" class="btn btn-warning" value="Madya">Madya</a>
-              <a href="<?= base_url()."controller/kategorikanlahU/".$d['id_laporan'];?>" class="btn btn-primary" value="Utama">Utama</a>
-              <a href="<?= base_url()."controller/kategorikanlahB/".$d['id_laporan'];?>" class="btn btn-success" value="Bukan Desa Tangguh Bencana">Bukan Desa Tangguh Bencana</a>
+              <a href="<?= base_url()."controller/kategorikanlahP/".$d['nama_desa'];?>" class="btn btn-danger" value="Pratama">Pratama</a>
+              <a href="<?= base_url()."controller/kategorikanlahM/".$d['nama_desa'];?>" class="btn btn-warning" value="Madya">Madya</a>
+              <a href="<?= base_url()."controller/kategorikanlahU/".$d['nama_desa'];?>" class="btn btn-primary" value="Utama">Utama</a>
+              <a href="<?= base_url()."controller/kategorikanlahB/".$d['nama_desa'];?>" class="btn btn-success" value="Bukan Desa Tangguh Bencana">Bukan Desa Tangguh Bencana</a>
             <?php } ?>
             </div>
             <a href="<?= base_url()."controller/lihatlaporan"?>" class="btn btn-secondary">Kembali</a>
