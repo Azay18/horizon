@@ -1,5 +1,5 @@
 <title>Kategorikan Desa</title>
-<?php require 'b_header.php'; ?>
+<?php require 'f_header.php'; ?>
 
     <!-- form register -->
     <form class="container" style="padding-top:50px" method="post" action="<?php echo base_url().'controller/kategorikan'?>">
@@ -150,18 +150,7 @@ aset produktif masyarakat?</td>
                     </tr>
                 </table>
             </div>
-            <div class="form-group mt-3">
-            <h4 class="mt-4 text-center">KATEGORI DESA</h4><hr>
-            <?php foreach ($data as $d){?>
-            <!-- <input type="text" class="form-control" id="inputDesa" placeholder="Nama Desa" name="nama_desa"> -->               
-              <a href="<?= base_url()."controller/kategorikanlahP/".$d['nama_desa'];?>" class="btn btn-danger" value="Pratama">Pratama</a>
-              <a href="<?= base_url()."controller/kategorikanlahM/".$d['nama_desa'];?>" class="btn btn-warning" value="Madya">Madya</a>
-              <a href="<?= base_url()."controller/kategorikanlahU/".$d['nama_desa'];?>" class="btn btn-primary" value="Utama">Utama</a>
-              <a href="<?= base_url()."controller/kategorikanlahB/".$d['nama_desa'];?>" class="btn btn-success" value="Bukan Desa Tangguh Bencana">Bukan Desa Tangguh Bencana</a>
-            <?php } ?>
-            </div>
-            <a href="<?= base_url()."controller/lihatlaporan"?>" class="btn btn-secondary">Kembali</a>
-    </div><br>
+            <a href="<?= base_url()."controller/laporan"?>" class="btn btn-secondary">Kembali</a><br>
     </form>
 
 <?php require 'footer.php'; ?>

@@ -33,7 +33,7 @@
                 <td><?= $l['nama_desa']; ?></td>
                 <td><?= $l['tanggal_laporan']; ?></td>
                 <td>
-                <a type="button" class="btn btn-primary" href="<?= base_url()."controller/ceklaporan/".$l['id_laporan'];?>">Lihat Laporan</a>
+                <a type="button" class="btn btn-success" href="<?= base_url()."controller/ceklaporan/".$l['id_laporan'];?>">Lihat Laporan</a>
                 </td>
               </tr>
           <?php } ?>

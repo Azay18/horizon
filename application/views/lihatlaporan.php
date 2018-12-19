@@ -38,7 +38,7 @@
                 <!-- Button trigger modal -->
                 <!-- Button trigger modal -->
                 <a type="button" class="btn btn-primary" href="<?= base_url()."controller/kategorikan/".$l['id_laporan'];?>">Kategorikan</a>
-                <a class="btn btn-danger ml-1" href="<?= base_url()."controller/hapus/".$l['id_laporan'];?>" onclick="return confirm('Anda Yakin Ingin Menolak Data Ini?')">Tolak Laporan</a>
+                <a class="btn btn-danger ml-1" href="<?= base_url()."controller/hapus/".$l['id_laporan'];?>" onclick="return confirm('Anda Yakin Ingin Menolak Laporan Ini?')">Tolak Laporan</a>
                 </td>
               </tr>  
                 </td>

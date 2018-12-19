@@ -309,8 +309,10 @@ class controller extends CI_Controller {
 	}
 
 	public function ceklaporan(){
-		$data = $this->M_model->GetLaporan();
-		$this->load->view('ceklaporan', array('data'=>$data));
+		$id=$this->uri->segment(3);
+		$data = $this->M_model->get_data_laporan($id);
+		$data2 = $this->M_model->cek_jawaban($id);			//Cek jawaban ya / tidak
+		$this->load->view('ceklaporan', array('data' =>$data, 'data2'=>$data2));
 	}
 
 	public function kategorikanlahP(){
@@ -431,7 +433,7 @@ class controller extends CI_Controller {
 			$where = array('id_laporan' => $id_laporan);
 			$lap = $this->M_model->DeleteData('m_laporan', $where);
 			if ($lap>=1) {
-				redirect('controller/laporan');
+				redirect('controller/lihatlaporan');
 			}
 		}
 
